@@ -19,7 +19,7 @@ namespace Tarea_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hola Mundo");
+            MessageBox.Show("Nunca te digas que no puedes hacer algo, solo pierdes cuando tú mismo crees que perdiste.");
         }
     }
 }
