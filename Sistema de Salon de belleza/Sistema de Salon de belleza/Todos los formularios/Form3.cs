@@ -54,7 +54,7 @@ namespace Sistema_de_Salon_de_belleza.Todos_los_formularios
             }
             else
             {
-                MessageBox.Show("resultado.Mensaje");
+                MessageBox.Show(resultado.Mensaje);
             }
         }
 
