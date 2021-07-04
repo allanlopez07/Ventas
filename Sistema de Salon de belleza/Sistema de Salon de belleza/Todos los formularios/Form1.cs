@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Rentas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Sistema_de_Salon_de_belleza
 {
     public partial class Form1 : Form
     {
+        SeguridadBl _seguridad;
         public Form1()
         {
             InitializeComponent();
+            _seguridad = new SeguridadBl();
         }
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -44,24 +47,19 @@ namespace Sistema_de_Salon_de_belleza
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            string usuario1,usuario2;
-            string contraseña1, contraseña2;
-
-            usuario1 = "Henry"; usuario2 = "Gladis";
-            contraseña1 = "Henry19"; contraseña2 = "Gladis15";
-            
-            if ((TextBox1.Text == usuario1 && TextBox2.Text == contraseña1) || (TextBox1.Text == usuario2 && TextBox2.Text == contraseña2))
+            string usuario;
+            string contrasena;
+            usuario = TextBox1.Text;
+            contrasena = TextBox2.Text;
+            var resultado = _seguridad.Automatizar(usuario,contrasena);
+            if (resultado == true)
             {
-                MessageBox.Show ("--- BIENVENIDO ---");
-               
                 this.Close();
-                
-            }             
-        else
+            }else
             {
-                MessageBox.Show("--Contraseña o usuario incorrecto--");
+                MessageBox.Show("--- Usuario y contraseña incorrectos ---");
             }
-
+            
         }
     }
 }

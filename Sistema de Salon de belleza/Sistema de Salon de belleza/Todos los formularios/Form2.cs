@@ -17,6 +17,11 @@ namespace Sistema_de_Salon_de_belleza
             InitializeComponent();
         }
 
+        private void Login()
+        {
+            var form1 = new Form1();
+            form1.ShowDialog();
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             var form1 = new Form1();
@@ -35,7 +40,7 @@ namespace Sistema_de_Salon_de_belleza
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form3 = new Todos_los_formularios.Productos();
+            var form3 = new Todos_los_formularios.FormProductos();
             form3.ShowDialog();
         }
 
@@ -51,8 +56,7 @@ namespace Sistema_de_Salon_de_belleza
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form1 = new Form1();
-            form1.ShowDialog();
+            Login();
         }
 
         private void button5_Click(object sender, EventArgs e)

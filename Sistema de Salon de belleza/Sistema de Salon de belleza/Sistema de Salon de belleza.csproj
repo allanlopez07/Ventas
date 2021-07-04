@@ -60,11 +60,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Todos los formularios\Form3productos.cs">
+    <Compile Include="Todos los formularios\Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Todos los formularios\Form3productos.Designer.cs">
-      <DependentUpon>Form3productos.cs</DependentUpon>
+    <Compile Include="Todos los formularios\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="Todos los formularios\Form4reportes.cs">
       <SubType>Form</SubType>
@@ -106,8 +106,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Todos los formularios\Form3productos.resx">
-      <DependentUpon>Form3productos.cs</DependentUpon>
+    <EmbeddedResource Include="Todos los formularios\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Todos los formularios\Form4reportes.resx">
       <DependentUpon>Form4reportes.cs</DependentUpon>
@@ -121,6 +121,9 @@
     <EmbeddedResource Include="Todos los formularios\Form7Citas.resx">
       <DependentUpon>Form7Citas.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\BL.Rentas.Producto.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.ProductosBL.datasource" />
+    <None Include="Properties\DataSources\ProductosBL.SeguridadBl.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,6 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\fondo-poligono-geometrico-papel-pintado-diamantes-patron-elegante-color-suave_206846-996.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SeguridadBL\BL.Rentas.csproj">
+      <Project>{ea28fa95-27a9-46df-b8af-943cc769683e}</Project>
+      <Name>BL.Rentas</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

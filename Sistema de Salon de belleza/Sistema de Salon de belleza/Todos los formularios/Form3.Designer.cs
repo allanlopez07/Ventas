@@ -49,7 +49,6 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.seguridadBlBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.seguridadBlBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.ListaProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.existenciaTextBox = new System.Windows.Forms.TextBox();
@@ -57,12 +56,15 @@
             this.marcaTextBox = new System.Windows.Forms.TextBox();
             this.precioTextBox = new System.Windows.Forms.TextBox();
             this.listaProductosDataGridView = new System.Windows.Forms.DataGridView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ListaProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -71,8 +73,8 @@
             precioLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.seguridadBlBindingNavigator)).BeginInit();
             this.seguridadBlBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaProductosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaProductosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
@@ -216,6 +218,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -225,21 +228,22 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // seguridadBlBindingNavigatorSaveItem
             // 
             this.seguridadBlBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.seguridadBlBindingNavigatorSaveItem.Enabled = false;
             this.seguridadBlBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("seguridadBlBindingNavigatorSaveItem.Image")));
             this.seguridadBlBindingNavigatorSaveItem.Name = "seguridadBlBindingNavigatorSaveItem";
             this.seguridadBlBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.seguridadBlBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.seguridadBlBindingNavigatorSaveItem.Click += new System.EventHandler(this.seguridadBlBindingNavigatorSaveItem_Click);
             // 
             // seguridadBlBindingNavigator
             // 
-            this.seguridadBlBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.seguridadBlBindingNavigator.AddNewItem = null;
             this.seguridadBlBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.seguridadBlBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.seguridadBlBindingNavigator.DeleteItem = null;
             this.seguridadBlBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -252,7 +256,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.seguridadBlBindingNavigatorSaveItem});
+            this.seguridadBlBindingNavigatorSaveItem,
+            this.toolStripButtonCancelar});
             this.seguridadBlBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.seguridadBlBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.seguridadBlBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -263,11 +268,7 @@
             this.seguridadBlBindingNavigator.Size = new System.Drawing.Size(1073, 25);
             this.seguridadBlBindingNavigator.TabIndex = 0;
             this.seguridadBlBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // ListaProductosBindingSource
-            // 
-            this.ListaProductosBindingSource.DataSource = typeof(BL.Rentas.Producto);
-            this.ListaProductosBindingSource.CurrentChanged += new System.EventHandler(this.productoBindingSource_CurrentChanged);
+            this.seguridadBlBindingNavigator.RefreshItems += new System.EventHandler(this.seguridadBlBindingNavigator_RefreshItems);
             // 
             // activoCheckBox
             // 
@@ -284,6 +285,7 @@
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ListaProductosBindingSource, "Descripcion", true));
             this.descripcionTextBox.Location = new System.Drawing.Point(105, 99);
             this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.ReadOnly = true;
             this.descripcionTextBox.Size = new System.Drawing.Size(104, 20);
             this.descripcionTextBox.TabIndex = 5;
             // 
@@ -336,6 +338,23 @@
             this.listaProductosDataGridView.Size = new System.Drawing.Size(650, 526);
             this.listaProductosDataGridView.TabIndex = 13;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // toolStripButtonCancelar
+            // 
+            this.toolStripButtonCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
+            this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButtonCancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.Visible = false;
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -372,6 +391,11 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
+            // ListaProductosBindingSource
+            // 
+            this.ListaProductosBindingSource.DataSource = typeof(BL.Rentas.Producto);
+            this.ListaProductosBindingSource.CurrentChanged += new System.EventHandler(this.productoBindingSource_CurrentChanged);
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,8 +426,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.seguridadBlBindingNavigator)).EndInit();
             this.seguridadBlBindingNavigator.ResumeLayout(false);
             this.seguridadBlBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaProductosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaProductosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,5 +461,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
     }
 }
