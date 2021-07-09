@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Todos los formularios\Form6Citas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Todos los formularios\Form6Citas.Designer.cs">
+      <DependentUpon>Form6Citas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Todos los formularios\Form5Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Todos los formularios\Form5Proveedores.Designer.cs">
+      <DependentUpon>Form5Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Todos los formularios\Form4Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Todos los formularios\Form4Clientes.Designer.cs">
+      <DependentUpon>Form4Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Todos los formularios\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,30 +84,15 @@
     <Compile Include="Todos los formularios\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Todos los formularios\Form4reportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Todos los formularios\Form4reportes.Designer.cs">
-      <DependentUpon>Form4reportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Todos los formularios\Form5clientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Todos los formularios\Form5clientes.Designer.cs">
-      <DependentUpon>Form5clientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Todos los formularios\Form6proveedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Todos los formularios\Form6proveedores.Designer.cs">
-      <DependentUpon>Form6proveedores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Todos los formularios\Form7Citas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Todos los formularios\Form7Citas.Designer.cs">
-      <DependentUpon>Form7Citas.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Todos los formularios\Form6Citas.resx">
+      <DependentUpon>Form6Citas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Todos los formularios\Form5Proveedores.resx">
+      <DependentUpon>Form5Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Todos los formularios\Form4Clientes.resx">
+      <DependentUpon>Form4Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Todos los formularios\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,20 +112,15 @@
     <EmbeddedResource Include="Todos los formularios\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Todos los formularios\Form4reportes.resx">
-      <DependentUpon>Form4reportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Todos los formularios\Form5clientes.resx">
-      <DependentUpon>Form5clientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Todos los formularios\Form6proveedores.resx">
-      <DependentUpon>Form6proveedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Todos los formularios\Form7Citas.resx">
-      <DependentUpon>Form7Citas.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="Properties\DataSources\BL.Rentas.CitasBL+Citas.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.CitasBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Cliente1.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.ClientesBL1.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.ProductosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Proveedores.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.ProveedoresBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.SeguridadBl1.datasource" />
     <None Include="Properties\DataSources\ProductosBL.SeguridadBl.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
