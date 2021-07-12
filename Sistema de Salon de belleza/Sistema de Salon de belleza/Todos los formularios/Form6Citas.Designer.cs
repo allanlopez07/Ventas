@@ -36,6 +36,7 @@
             System.Windows.Forms.Label horaLabel;
             System.Windows.Forms.Label servicioLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6Citas));
+            System.Windows.Forms.Label activoLabel;
             this.listaCitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaCitasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -63,12 +64,14 @@
             this.fecha_CitaTextBox = new System.Windows.Forms.TextBox();
             this.horaTextBox = new System.Windows.Forms.TextBox();
             this.servicioTextBox = new System.Windows.Forms.TextBox();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
             clienteLabel = new System.Windows.Forms.Label();
             empleadoLabel = new System.Windows.Forms.Label();
             estatusLabel = new System.Windows.Forms.Label();
             fecha_CitaLabel = new System.Windows.Forms.Label();
             horaLabel = new System.Windows.Forms.Label();
             servicioLabel = new System.Windows.Forms.Label();
+            activoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitasBindingNavigator)).BeginInit();
             this.listaCitasBindingNavigator.SuspendLayout();
@@ -78,8 +81,9 @@
             // clienteLabel
             // 
             clienteLabel.AutoSize = true;
+            clienteLabel.BackColor = System.Drawing.Color.Transparent;
             clienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            clienteLabel.Location = new System.Drawing.Point(9, 92);
+            clienteLabel.Location = new System.Drawing.Point(5, 187);
             clienteLabel.Name = "clienteLabel";
             clienteLabel.Size = new System.Drawing.Size(62, 20);
             clienteLabel.TabIndex = 2;
@@ -88,8 +92,9 @@
             // empleadoLabel
             // 
             empleadoLabel.AutoSize = true;
+            empleadoLabel.BackColor = System.Drawing.Color.Transparent;
             empleadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            empleadoLabel.Location = new System.Drawing.Point(9, 118);
+            empleadoLabel.Location = new System.Drawing.Point(5, 219);
             empleadoLabel.Name = "empleadoLabel";
             empleadoLabel.Size = new System.Drawing.Size(85, 20);
             empleadoLabel.TabIndex = 4;
@@ -98,8 +103,9 @@
             // estatusLabel
             // 
             estatusLabel.AutoSize = true;
+            estatusLabel.BackColor = System.Drawing.Color.Transparent;
             estatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            estatusLabel.Location = new System.Drawing.Point(9, 144);
+            estatusLabel.Location = new System.Drawing.Point(5, 281);
             estatusLabel.Name = "estatusLabel";
             estatusLabel.Size = new System.Drawing.Size(68, 20);
             estatusLabel.TabIndex = 6;
@@ -108,8 +114,9 @@
             // fecha_CitaLabel
             // 
             fecha_CitaLabel.AutoSize = true;
+            fecha_CitaLabel.BackColor = System.Drawing.Color.Transparent;
             fecha_CitaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fecha_CitaLabel.Location = new System.Drawing.Point(9, 170);
+            fecha_CitaLabel.Location = new System.Drawing.Point(6, 123);
             fecha_CitaLabel.Name = "fecha_CitaLabel";
             fecha_CitaLabel.Size = new System.Drawing.Size(90, 20);
             fecha_CitaLabel.TabIndex = 8;
@@ -118,8 +125,9 @@
             // horaLabel
             // 
             horaLabel.AutoSize = true;
+            horaLabel.BackColor = System.Drawing.Color.Transparent;
             horaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            horaLabel.Location = new System.Drawing.Point(9, 196);
+            horaLabel.Location = new System.Drawing.Point(7, 155);
             horaLabel.Name = "horaLabel";
             horaLabel.Size = new System.Drawing.Size(48, 20);
             horaLabel.TabIndex = 10;
@@ -128,8 +136,9 @@
             // servicioLabel
             // 
             servicioLabel.AutoSize = true;
+            servicioLabel.BackColor = System.Drawing.Color.Transparent;
             servicioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            servicioLabel.Location = new System.Drawing.Point(9, 222);
+            servicioLabel.Location = new System.Drawing.Point(7, 249);
             servicioLabel.Name = "servicioLabel";
             servicioLabel.Size = new System.Drawing.Size(68, 20);
             servicioLabel.TabIndex = 12;
@@ -165,7 +174,7 @@
             this.listaCitasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaCitasBindingNavigator.Name = "listaCitasBindingNavigator";
             this.listaCitasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaCitasBindingNavigator.Size = new System.Drawing.Size(839, 25);
+            this.listaCitasBindingNavigator.Size = new System.Drawing.Size(886, 25);
             this.listaCitasBindingNavigator.TabIndex = 0;
             this.listaCitasBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -275,7 +284,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.listaCitasDataGridView.DataSource = this.listaCitasBindingSource;
-            this.listaCitasDataGridView.Location = new System.Drawing.Point(197, 59);
+            this.listaCitasDataGridView.Location = new System.Drawing.Point(232, 46);
             this.listaCitasDataGridView.Name = "listaCitasDataGridView";
             this.listaCitasDataGridView.Size = new System.Drawing.Size(642, 359);
             this.listaCitasDataGridView.TabIndex = 1;
@@ -320,62 +329,84 @@
             // 
             this.clienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Cliente", true));
             this.clienteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clienteTextBox.Location = new System.Drawing.Point(92, 89);
+            this.clienteTextBox.Location = new System.Drawing.Point(101, 184);
             this.clienteTextBox.Name = "clienteTextBox";
-            this.clienteTextBox.Size = new System.Drawing.Size(100, 26);
+            this.clienteTextBox.Size = new System.Drawing.Size(114, 26);
             this.clienteTextBox.TabIndex = 3;
             // 
             // empleadoTextBox
             // 
             this.empleadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Empleado", true));
             this.empleadoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.empleadoTextBox.Location = new System.Drawing.Point(92, 115);
+            this.empleadoTextBox.Location = new System.Drawing.Point(101, 216);
             this.empleadoTextBox.Name = "empleadoTextBox";
-            this.empleadoTextBox.Size = new System.Drawing.Size(100, 26);
+            this.empleadoTextBox.Size = new System.Drawing.Size(114, 26);
             this.empleadoTextBox.TabIndex = 5;
             // 
             // estatusTextBox
             // 
             this.estatusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Estatus", true));
             this.estatusTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estatusTextBox.Location = new System.Drawing.Point(92, 141);
+            this.estatusTextBox.Location = new System.Drawing.Point(101, 278);
             this.estatusTextBox.Name = "estatusTextBox";
-            this.estatusTextBox.Size = new System.Drawing.Size(100, 26);
+            this.estatusTextBox.Size = new System.Drawing.Size(114, 26);
             this.estatusTextBox.TabIndex = 7;
             // 
             // fecha_CitaTextBox
             // 
             this.fecha_CitaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Fecha_Cita", true));
             this.fecha_CitaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha_CitaTextBox.Location = new System.Drawing.Point(91, 167);
+            this.fecha_CitaTextBox.Location = new System.Drawing.Point(101, 120);
             this.fecha_CitaTextBox.Name = "fecha_CitaTextBox";
-            this.fecha_CitaTextBox.Size = new System.Drawing.Size(100, 26);
+            this.fecha_CitaTextBox.Size = new System.Drawing.Size(114, 26);
             this.fecha_CitaTextBox.TabIndex = 9;
             // 
             // horaTextBox
             // 
             this.horaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Hora", true));
             this.horaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaTextBox.Location = new System.Drawing.Point(90, 193);
+            this.horaTextBox.Location = new System.Drawing.Point(101, 152);
             this.horaTextBox.Name = "horaTextBox";
-            this.horaTextBox.Size = new System.Drawing.Size(100, 26);
+            this.horaTextBox.Size = new System.Drawing.Size(114, 26);
             this.horaTextBox.TabIndex = 11;
             // 
             // servicioTextBox
             // 
             this.servicioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Servicio", true));
             this.servicioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servicioTextBox.Location = new System.Drawing.Point(90, 219);
+            this.servicioTextBox.Location = new System.Drawing.Point(101, 246);
             this.servicioTextBox.Name = "servicioTextBox";
-            this.servicioTextBox.Size = new System.Drawing.Size(100, 26);
+            this.servicioTextBox.Size = new System.Drawing.Size(114, 26);
             this.servicioTextBox.TabIndex = 13;
+            // 
+            // activoLabel
+            // 
+            activoLabel.AutoSize = true;
+            activoLabel.BackColor = System.Drawing.Color.Transparent;
+            activoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            activoLabel.Location = new System.Drawing.Point(12, 85);
+            activoLabel.Name = "activoLabel";
+            activoLabel.Size = new System.Drawing.Size(54, 20);
+            activoLabel.TabIndex = 14;
+            activoLabel.Text = "activo:";
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.activoCheckBox.Location = new System.Drawing.Point(101, 81);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.activoCheckBox.TabIndex = 15;
+            this.activoCheckBox.UseVisualStyleBackColor = false;
             // 
             // Form6Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(839, 457);
+            this.ClientSize = new System.Drawing.Size(886, 457);
+            this.Controls.Add(activoLabel);
+            this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(clienteLabel);
             this.Controls.Add(this.clienteTextBox);
             this.Controls.Add(empleadoLabel);
@@ -433,5 +464,6 @@
         private System.Windows.Forms.TextBox fecha_CitaTextBox;
         private System.Windows.Forms.TextBox horaTextBox;
         private System.Windows.Forms.TextBox servicioTextBox;
+        private System.Windows.Forms.CheckBox activoCheckBox;
     }
 }

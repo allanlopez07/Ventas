@@ -28,5 +28,20 @@ namespace Sistema_de_Salon_de_belleza
         {
 
         }
+
+        private void activoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

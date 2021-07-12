@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,44 +10,20 @@ namespace BL.Rentas
 {
    public  class ProductosBL
     {
+        Contexto _contexto; //instanciar variable contexto
         public BindingList<Producto> ListaProductos { get; set;  }
 
         public ProductosBL()
         {
+            _contexto = new Contexto(); //instanciar en el contructor bl
             ListaProductos = new BindingList<Producto>();
-
-            var Producto1 = new Producto();
-            Producto1.Id = 001;
-            Producto1.Descripcion = "Plancha de Ceramica";
-            Producto1.Marca = "Remington S9500 Pearl";
-            Producto1.Precio = 5000;
-            Producto1.Existencia = 5;
-            Producto1.Activo = true;
-
-            ListaProductos.Add(Producto1);
-
-            var Producto2 = new Producto();
-            Producto2.Id = 002;
-            Producto2.Descripcion = "Delantal para estilistas.";
-            Producto2.Marca = "LCL Beauty ";
-            Producto2.Precio = 50;
-            Producto2.Existencia = 100;
-            Producto2.Activo = true;
-
-            ListaProductos.Add(Producto2);
-
-            var Producto3 = new Producto();
-            Producto3.Id = 003;
-            Producto3.Descripcion = "Sillón reclinable hidráulico.";
-            Producto3.Marca = "Heavy Duty  ";
-            Producto3.Precio = 1500;
-            Producto3.Existencia = 4;
-            Producto3.Activo = true;
-
-            ListaProductos.Add(Producto3);
+            
         }
         public BindingList<Producto> ObtenerProductos()
         {
+            _contexto.Productos.Load();
+            ListaProductos = _contexto.Productos.Local.ToBindingList();
+
             return ListaProductos;
         }
 
@@ -58,11 +35,7 @@ namespace BL.Rentas
                 return resultado;
             }
 
-
-            if(producto.Id==0)
-            {
-                producto.Id = ListaProductos.Max(item => item.Id) + 1;
-            }
+            _contexto.SaveChanges();
 
             resultado.Exitoso = true;
             return resultado;
@@ -71,7 +44,6 @@ namespace BL.Rentas
         public void AgregarProducto()
         {
             var nuevoProducto = new Producto();
-
             ListaProductos.Add(nuevoProducto);
         }
 
@@ -82,6 +54,7 @@ namespace BL.Rentas
                 if (producto.Id==id)
                 {
                     ListaProductos.Remove(producto);
+                    _contexto.SaveChanges();
                     return true;
                 }
             }

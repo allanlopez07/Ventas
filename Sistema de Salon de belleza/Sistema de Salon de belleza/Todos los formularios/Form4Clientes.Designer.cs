@@ -82,18 +82,21 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
+            activoLabel.BackColor = System.Drawing.Color.Transparent;
             activoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activoLabel.Location = new System.Drawing.Point(33, 79);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(54, 20);
             activoLabel.TabIndex = 2;
             activoLabel.Text = "activo:";
+            activoLabel.Click += new System.EventHandler(this.activoLabel_Click);
             // 
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
+            apellidoLabel.BackColor = System.Drawing.Color.Transparent;
             apellidoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            apellidoLabel.Location = new System.Drawing.Point(33, 107);
+            apellidoLabel.Location = new System.Drawing.Point(33, 159);
             apellidoLabel.Name = "apellidoLabel";
             apellidoLabel.Size = new System.Drawing.Size(69, 20);
             apellidoLabel.TabIndex = 4;
@@ -102,8 +105,9 @@
             // correoLabel
             // 
             correoLabel.AutoSize = true;
+            correoLabel.BackColor = System.Drawing.Color.Transparent;
             correoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            correoLabel.Location = new System.Drawing.Point(33, 133);
+            correoLabel.Location = new System.Drawing.Point(33, 211);
             correoLabel.Name = "correoLabel";
             correoLabel.Size = new System.Drawing.Size(61, 20);
             correoLabel.TabIndex = 6;
@@ -112,8 +116,9 @@
             // direccionLabel
             // 
             direccionLabel.AutoSize = true;
+            direccionLabel.BackColor = System.Drawing.Color.Transparent;
             direccionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            direccionLabel.Location = new System.Drawing.Point(33, 159);
+            direccionLabel.Location = new System.Drawing.Point(33, 185);
             direccionLabel.Name = "direccionLabel";
             direccionLabel.Size = new System.Drawing.Size(79, 20);
             direccionLabel.TabIndex = 8;
@@ -122,8 +127,9 @@
             // idClienteLabel
             // 
             idClienteLabel.AutoSize = true;
+            idClienteLabel.BackColor = System.Drawing.Color.Transparent;
             idClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idClienteLabel.Location = new System.Drawing.Point(33, 185);
+            idClienteLabel.Location = new System.Drawing.Point(33, 107);
             idClienteLabel.Name = "idClienteLabel";
             idClienteLabel.Size = new System.Drawing.Size(80, 20);
             idClienteLabel.TabIndex = 10;
@@ -132,8 +138,9 @@
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
+            nombreLabel.BackColor = System.Drawing.Color.Transparent;
             nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(33, 211);
+            nombreLabel.Location = new System.Drawing.Point(33, 133);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(69, 20);
             nombreLabel.TabIndex = 12;
@@ -142,6 +149,7 @@
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
+            telefonoLabel.BackColor = System.Drawing.Color.Transparent;
             telefonoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             telefonoLabel.Location = new System.Drawing.Point(33, 237);
             telefonoLabel.Name = "telefonoLabel";
@@ -151,44 +159,45 @@
             // 
             // activoCheckBox
             // 
+            this.activoCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.activoCheckBox.Location = new System.Drawing.Point(132, 75);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.Text = "checkBox1";
-            this.activoCheckBox.UseVisualStyleBackColor = true;
+            this.activoCheckBox.UseVisualStyleBackColor = false;
+            this.activoCheckBox.CheckedChanged += new System.EventHandler(this.activoCheckBox_CheckedChanged);
             // 
             // apellidoTextBox
             // 
-            this.apellidoTextBox.Location = new System.Drawing.Point(132, 105);
+            this.apellidoTextBox.Location = new System.Drawing.Point(132, 157);
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(104, 20);
             this.apellidoTextBox.TabIndex = 5;
             // 
             // correoTextBox
             // 
-            this.correoTextBox.Location = new System.Drawing.Point(132, 131);
+            this.correoTextBox.Location = new System.Drawing.Point(132, 209);
             this.correoTextBox.Name = "correoTextBox";
             this.correoTextBox.Size = new System.Drawing.Size(104, 20);
             this.correoTextBox.TabIndex = 7;
             // 
             // direccionTextBox
             // 
-            this.direccionTextBox.Location = new System.Drawing.Point(132, 157);
+            this.direccionTextBox.Location = new System.Drawing.Point(132, 183);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(104, 20);
             this.direccionTextBox.TabIndex = 9;
             // 
             // idClienteTextBox
             // 
-            this.idClienteTextBox.Location = new System.Drawing.Point(132, 183);
+            this.idClienteTextBox.Location = new System.Drawing.Point(132, 105);
             this.idClienteTextBox.Name = "idClienteTextBox";
             this.idClienteTextBox.Size = new System.Drawing.Size(104, 20);
             this.idClienteTextBox.TabIndex = 11;
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(132, 209);
+            this.nombreTextBox.Location = new System.Drawing.Point(132, 131);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(104, 20);
             this.nombreTextBox.TabIndex = 13;
@@ -275,6 +284,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 

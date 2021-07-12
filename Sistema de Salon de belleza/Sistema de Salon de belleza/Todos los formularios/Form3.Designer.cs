@@ -52,7 +52,6 @@
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.ListaProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.existenciaTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.marcaTextBox = new System.Windows.Forms.TextBox();
@@ -64,6 +63,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -92,7 +93,7 @@
             descripcionLabel.AutoSize = true;
             descripcionLabel.BackColor = System.Drawing.Color.Transparent;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descripcionLabel.Location = new System.Drawing.Point(10, 98);
+            descripcionLabel.Location = new System.Drawing.Point(12, 124);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(96, 20);
             descripcionLabel.TabIndex = 4;
@@ -103,7 +104,7 @@
             existenciaLabel.AutoSize = true;
             existenciaLabel.BackColor = System.Drawing.Color.Transparent;
             existenciaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            existenciaLabel.Location = new System.Drawing.Point(11, 124);
+            existenciaLabel.Location = new System.Drawing.Point(11, 176);
             existenciaLabel.Name = "existenciaLabel";
             existenciaLabel.Size = new System.Drawing.Size(85, 20);
             existenciaLabel.TabIndex = 6;
@@ -114,18 +115,19 @@
             idLabel.AutoSize = true;
             idLabel.BackColor = System.Drawing.Color.Transparent;
             idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(11, 150);
+            idLabel.Location = new System.Drawing.Point(12, 97);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(27, 20);
             idLabel.TabIndex = 8;
             idLabel.Text = "Id:";
+            idLabel.Click += new System.EventHandler(this.idLabel_Click);
             // 
             // marcaLabel
             // 
             marcaLabel.AutoSize = true;
             marcaLabel.BackColor = System.Drawing.Color.Transparent;
             marcaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            marcaLabel.Location = new System.Drawing.Point(11, 176);
+            marcaLabel.Location = new System.Drawing.Point(12, 149);
             marcaLabel.Name = "marcaLabel";
             marcaLabel.Size = new System.Drawing.Size(57, 20);
             marcaLabel.TabIndex = 10;
@@ -136,7 +138,7 @@
             precioLabel.AutoSize = true;
             precioLabel.BackColor = System.Drawing.Color.Transparent;
             precioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            precioLabel.Location = new System.Drawing.Point(11, 202);
+            precioLabel.Location = new System.Drawing.Point(12, 206);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(57, 20);
             precioLabel.TabIndex = 12;
@@ -256,7 +258,8 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.seguridadBlBindingNavigatorSaveItem,
-            this.toolStripButtonCancelar});
+            this.toolStripButtonCancelar,
+            this.toolStripButton1});
             this.seguridadBlBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.seguridadBlBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.seguridadBlBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -267,6 +270,7 @@
             this.seguridadBlBindingNavigator.Size = new System.Drawing.Size(1073, 25);
             this.seguridadBlBindingNavigator.TabIndex = 0;
             this.seguridadBlBindingNavigator.Text = "bindingNavigator1";
+            this.seguridadBlBindingNavigator.RefreshItems += new System.EventHandler(this.seguridadBlBindingNavigator_RefreshItems);
             // 
             // toolStripButtonCancelar
             // 
@@ -281,48 +285,42 @@
             // 
             // activoCheckBox
             // 
+            this.activoCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.ListaProductosBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(105, 69);
+            this.activoCheckBox.Location = new System.Drawing.Point(121, 70);
             this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.activoCheckBox.Size = new System.Drawing.Size(49, 24);
             this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.Text = "checkBox1";
-            this.activoCheckBox.UseVisualStyleBackColor = true;
+            this.activoCheckBox.UseVisualStyleBackColor = false;
+            this.activoCheckBox.CheckedChanged += new System.EventHandler(this.activoCheckBox_CheckedChanged);
             // 
             // ListaProductosBindingSource
             // 
             this.ListaProductosBindingSource.DataSource = typeof(BL.Rentas.Producto);
             this.ListaProductosBindingSource.CurrentChanged += new System.EventHandler(this.productoBindingSource_CurrentChanged);
             // 
-            // descripcionTextBox
-            // 
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ListaProductosBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(105, 99);
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.ReadOnly = true;
-            this.descripcionTextBox.Size = new System.Drawing.Size(104, 20);
-            this.descripcionTextBox.TabIndex = 5;
-            // 
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ListaProductosBindingSource, "Existencia", true));
-            this.existenciaTextBox.Location = new System.Drawing.Point(105, 125);
+            this.existenciaTextBox.Location = new System.Drawing.Point(108, 176);
             this.existenciaTextBox.Name = "existenciaTextBox";
             this.existenciaTextBox.Size = new System.Drawing.Size(104, 20);
             this.existenciaTextBox.TabIndex = 7;
+            this.existenciaTextBox.TextChanged += new System.EventHandler(this.existenciaTextBox_TextChanged);
             // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ListaProductosBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(105, 151);
+            this.idTextBox.Location = new System.Drawing.Point(108, 99);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(104, 20);
             this.idTextBox.TabIndex = 9;
+            this.idTextBox.TextChanged += new System.EventHandler(this.idTextBox_TextChanged);
             // 
             // marcaTextBox
             // 
             this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ListaProductosBindingSource, "Marca", true));
-            this.marcaTextBox.Location = new System.Drawing.Point(105, 177);
+            this.marcaTextBox.Location = new System.Drawing.Point(108, 149);
             this.marcaTextBox.Name = "marcaTextBox";
             this.marcaTextBox.Size = new System.Drawing.Size(104, 20);
             this.marcaTextBox.TabIndex = 11;
@@ -330,7 +328,7 @@
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ListaProductosBindingSource, "Precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(105, 203);
+            this.precioTextBox.Location = new System.Drawing.Point(108, 208);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(104, 20);
             this.precioTextBox.TabIndex = 13;
@@ -347,7 +345,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewCheckBoxColumn1});
             this.listaProductosDataGridView.DataSource = this.ListaProductosBindingSource;
-            this.listaProductosDataGridView.Location = new System.Drawing.Point(243, 46);
+            this.listaProductosDataGridView.Location = new System.Drawing.Point(246, 28);
             this.listaProductosDataGridView.Name = "listaProductosDataGridView";
             this.listaProductosDataGridView.Size = new System.Drawing.Size(650, 526);
             this.listaProductosDataGridView.TabIndex = 13;
@@ -387,6 +385,25 @@
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ListaProductosBindingSource, "Descripcion", true));
+            this.descripcionTextBox.Location = new System.Drawing.Point(108, 124);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(104, 20);
+            this.descripcionTextBox.TabIndex = 5;
+            this.descripcionTextBox.TextChanged += new System.EventHandler(this.descripcionTextBox_TextChanged);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // FormProductos
             // 
@@ -441,7 +458,6 @@
         private System.Windows.Forms.BindingNavigator seguridadBlBindingNavigator;
         private System.Windows.Forms.BindingSource ListaProductosBindingSource;
         private System.Windows.Forms.CheckBox activoCheckBox;
-        private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox existenciaTextBox;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox marcaTextBox;
@@ -454,5 +470,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
+        private System.Windows.Forms.TextBox descripcionTextBox;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

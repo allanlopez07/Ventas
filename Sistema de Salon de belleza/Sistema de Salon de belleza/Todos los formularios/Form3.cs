@@ -44,11 +44,13 @@ namespace Sistema_de_Salon_de_belleza.Todos_los_formularios
             if (resultado.Exitoso==true)
             {
                 ListaProductosBindingSource.ResetBindings(false);
+                DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Producto Guardado");
                 
             }
             else
             {
-                MessageBox.Show("Ocurrió un error guardando el producto, debe ingresar una descripción");
+                MessageBox.Show(resultado.Mensaje);
             }
 
         }
@@ -115,6 +117,36 @@ namespace Sistema_de_Salon_de_belleza.Todos_los_formularios
         {
             DeshabilitarHabilitarBotones(true);
             Eliminar(0);
+        }
+
+        private void descripcionTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void existenciaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void seguridadBlBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
         }
     }
 }
