@@ -5,68 +5,112 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BL.Rentas.CitasBL;
 
 namespace BL.Rentas
 {
     public class ClientesBL
     {
+         Contexto _contexto;
         public BindingList<Cliente> ListaClientes { get; set; }
 
         public ClientesBL()
         {
+            _contexto = new Contexto();
             ListaClientes = new BindingList<Cliente>();
 
-            var Cliente1 = new Cliente();
-            Cliente1.IdCliente = 001;
-            Cliente1.Nombre = "Maria";
-            Cliente1.Apellido = "Perez";
-            Cliente1.Direccion = "Col.Penjamo";
-            Cliente1.Telefono = "97776757";
-            Cliente1.Correo = "MariaPerez67@gmail.com";
-            Cliente1.activo = true;
 
-            ListaClientes.Add(Cliente1);
-
-            var Cliente2 = new Cliente();
-            Cliente2.IdCliente = 002;
-            Cliente2.Nombre = "Rosio";
-            Cliente2.Apellido = "Mejia";
-            Cliente2.Direccion = "Col.La Nutria";
-            Cliente2.Telefono = "97276753";
-            Cliente2.Correo = "RosioMejia67@gmail.com";
-            Cliente2.activo = true;
-
-            ListaClientes.Add(Cliente2);
-
-            var Cliente3 = new Cliente();
-            Cliente3.IdCliente = 003;
-            Cliente3.Nombre = "Sonia";
-            Cliente3.Apellido = "Cruz";
-            Cliente3.Direccion = "Col.3 deJunio";
-            Cliente3.Telefono = "88903456";
-            Cliente3.Correo = "SoniaCruz1@gmail.com";
-            Cliente3.activo = false;
-
-            ListaClientes.Add(Cliente3);
         }
         public BindingList<Cliente> ObtenerClientes()
         {
+            _contexto.Cliente.Load();
+            ListaClientes = _contexto.Cliente.Local.ToBindingList();
+
+
             return ListaClientes;
         }
 
-        public static implicit operator ClientesBL(ProductosBL v)
+        public Resultado GuardarCliente(Cliente cliente)
+        {
+            var resultado = Validar(cliente);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
+
+            _contexto.SaveChanges();
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void AgregarClientes()
+        {
+            var nuevoCliente = new Cliente();
+            ListaClientes.Add(nuevoCliente);
+        }
+
+        public bool EliminarClientes(int Id)
+        {
+            foreach (var clientes in ListaClientes)
+            {
+                if (clientes.Id == Id)
+                {
+                    ListaClientes.Remove(clientes);
+                    _contexto.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+        }
+    /*    public static implicit operator ClientesBL(Cliente v)
         {
             throw new NotImplementedException();
+        }*/
+
+            public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
+        private Resultado Validar(Cliente cliente)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+
+
+            if (string.IsNullOrEmpty(cliente.Apellido) == true)
+            {
+                resultado.Mensaje = "ingrese un apellido";
+                resultado.Exitoso = false;
+
+            }
+
+            if (string.IsNullOrEmpty(cliente.Nombre) == true)
+            {
+                resultado.Mensaje = "Ingrese un nombre";
+                resultado.Exitoso = false;
+            }
+
+            return resultado;
         }
     }
     public class Cliente
     {
-        public int IdCliente { get; set; }
+        public int Id { get; set; } 
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
         public bool activo { get; set; }
+ //       public int ClienteId { get; set; }
+        
     }
+
+
+
 }

@@ -1,28 +1,30 @@
 ﻿using System;
+using BL.Rentas;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BL.Rentas.CitasBL;
 
 namespace BL.Rentas 
 {
    public  class ProductosBL
     {
-        Contexto _contexto; //instanciar variable contexto
+        Contexto _contexto;
         public BindingList<Producto> ListaProductos { get; set;  }
 
         public ProductosBL()
         {
-            _contexto = new Contexto(); //instanciar en el contructor bl
-            ListaProductos = new BindingList<Producto>();
-            
+            _contexto = new Contexto();
+             ListaProductos = new BindingList<Producto>();
         }
         public BindingList<Producto> ObtenerProductos()
         {
             _contexto.Productos.Load();
             ListaProductos = _contexto.Productos.Local.ToBindingList();
+
 
             return ListaProductos;
         }
@@ -41,56 +43,73 @@ namespace BL.Rentas
             return resultado;
         }
 
-        public void AgregarProducto()
+        public void AgrearProducto()
         {
             var nuevoProducto = new Producto();
             ListaProductos.Add(nuevoProducto);
         }
 
-        public bool EliminarProducto(int id)
+        public bool EliminarProducto(int Id)
         {
-            foreach (var producto in ListaProductos )
+            foreach (var productos in ListaProductos)
             {
-                if (producto.Id==id)
+                if (productos.Id  == Id)
                 {
-                    ListaProductos.Remove(producto);
+                    ListaProductos.Remove(productos);
                     _contexto.SaveChanges();
                     return true;
-                }
+                } 
             }
-
             return false;
-
         }
 
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
         private Resultado Validar(Producto producto)
         {
-
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
-            if (string.IsNullOrEmpty(producto.Descripcion)==true)
-            {
-                resultado.Mensaje = "Ingrese una descripción";
-                resultado.Exitoso = false;
-            }
+                  if (string.IsNullOrEmpty(producto.Descripcion) == true)
+                  {
+                      resultado.Mensaje = "Ingrese una descripcion";
+                      resultado.Exitoso = false;
+                  }
 
-            if(producto.Existencia<0)
-            {
-                resultado.Mensaje = "La existencia debe ser mayor que cero";
-                resultado.Exitoso = false;
-            }
+                  if (producto.Existencia <0)
+                  {
+                      resultado.Mensaje = "La existencia debe de ser mayor a cero";
+                      resultado.Exitoso = false;
 
+                  }
+                  
             if (producto.Precio < 0)
             {
-                resultado.Mensaje = "El Precio debe ser mayor que cero";
+                resultado.Mensaje = "La precio debe de ser mayor a cero";
                 resultado.Exitoso = false;
+
             }
 
+            if (producto.CategoriaId ==0)
+            {
+                resultado.Mensaje = "Seleccione una Categoria";
+                resultado.Exitoso = false;
+
+            }
+
+            if (producto.TipoId == 0)
+            {
+                resultado.Mensaje = "Seleccione un Tipo";
+                resultado.Exitoso = false;
+            }
             return resultado;
-
         }
-
     }
 public class Producto
     {
@@ -100,6 +119,11 @@ public class Producto
         public double Precio { get; set; }
         public int Existencia { get; set; }
         public bool Activo { get; set; }
+        public byte[] Foto { get; set; }
+        public int TipoId { get; set; }
+        public Tipo Tipo { get; set; }
+        public int CategoriaId { get; set; } 
+        public Categoria Categoria { get; set; }
     }
 
     public class Resultado
@@ -107,8 +131,5 @@ public class Producto
         public bool Exitoso { get; set; }
         public string Mensaje { get; set; }
     }
-
 }
-
-
 

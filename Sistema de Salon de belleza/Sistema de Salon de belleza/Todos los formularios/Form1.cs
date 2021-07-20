@@ -49,9 +49,17 @@ namespace Sistema_de_Salon_de_belleza
         {
             string usuario;
             string contrasena;
+
+
             usuario = TextBox1.Text;
             contrasena = TextBox2.Text;
+
+            Button2.Enabled = false;
+            Button2.Text = "Verificando...";
+            Application.DoEvents();
+
             var resultado = _seguridad.Automatizar(usuario,contrasena);
+
             if (resultado == true)
             {
                 this.Close();

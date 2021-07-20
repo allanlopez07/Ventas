@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,38 +11,83 @@ namespace BL.Rentas
    
     public class CitasBL
     {
+        Contexto _contexto;
         public BindingList<Citas> ListaCitas { get; set; } 
 
         public CitasBL()
         {
+            _contexto = new Contexto();
             ListaCitas = new BindingList<Citas>();
-
-            var Cita1 = new Citas();
-            Cita1.Fecha_Cita = "17-06-2021";
-            Cita1.Hora = "10 a.m";
-            Cita1.Cliente = "Aorosa Perez";
-            Cita1.Empleado = "Gladys Sosa";
-            Cita1.Servicio = "Corte de pelo";
-            Cita1.Estatus = "Programado";
-
-            ListaCitas.Add(Cita1);
-
-            var Cita2 = new Citas();
-            Cita2.Fecha_Cita = "18-06-2021";
-            Cita2.Hora = "11 a.m";
-            Cita2.Cliente = "Kevin Perez";
-            Cita2.Empleado = "Misael Sosa";
-            Cita2.Servicio = "Corte de barbilla";
-            Cita2.Estatus = "Programado";
-
-            ListaCitas.Add(Cita2);
+            
         }
         public BindingList<Citas> ObtenerCitas()
         {
+            _contexto.Citas.Load();
+            ListaCitas = _contexto.Citas.Local.ToBindingList();
+            
             return ListaCitas;
         }
+
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
+
+        public Resultado GuardarCitas(Citas citas)
+        {
+            var resultado = Validar(citas);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
+
+            _contexto.SaveChanges();
+
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void AgregarCitas()
+        {
+            var nuevaCita = new Citas();
+            ListaCitas.Add(nuevaCita);
+        }
+
+        public bool EliminarCitas(int Id) 
+        {
+            foreach (var citas in ListaCitas)
+            {
+                if (citas.Id == Id)
+                {
+                    ListaCitas.Remove(citas);
+                    _contexto.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private Resultado Validar(Citas citas)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+
+            if (string.IsNullOrEmpty(citas.Fecha_Cita) == true)
+            {
+                resultado.Mensaje = "Ingrese la fecha de la cita";
+                resultado.Exitoso = false;
+            }
+            return resultado;
+        }
+
         public class Citas
         {
+            public int Id { get; set; }
             public string Fecha_Cita { get; set; }
             public string Hora { get; set; }
             public string Cliente { get; set; }
@@ -50,4 +96,6 @@ namespace BL.Rentas
             public string Estatus { get; set; }
         }
     }
+
+   
 }

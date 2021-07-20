@@ -94,7 +94,7 @@
             this.Label4.AutoSize = true;
             this.Label4.BackColor = System.Drawing.Color.Transparent;
             this.Label4.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.Location = new System.Drawing.Point(110, 11);
+            this.Label4.Location = new System.Drawing.Point(122, 12);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(108, 37);
             this.Label4.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             this.CheckBox1.AutoSize = true;
             this.CheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.CheckBox1.Location = new System.Drawing.Point(200, 184);
+            this.CheckBox1.Location = new System.Drawing.Point(93, 187);
             this.CheckBox1.Name = "CheckBox1";
             this.CheckBox1.Size = new System.Drawing.Size(15, 14);
             this.CheckBox1.TabIndex = 9;
@@ -127,7 +127,7 @@
             // 
             this.TextBox1.Location = new System.Drawing.Point(85, 87);
             this.TextBox1.Name = "TextBox1";
-            this.TextBox1.Size = new System.Drawing.Size(164, 20);
+            this.TextBox1.Size = new System.Drawing.Size(176, 20);
             this.TextBox1.TabIndex = 4;
             // 
             // PictureBox4
@@ -183,7 +183,7 @@
             this.Label3.AutoSize = true;
             this.Label3.BackColor = System.Drawing.Color.Transparent;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(213, 185);
+            this.Label3.Location = new System.Drawing.Point(113, 188);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(117, 13);
             this.Label3.TabIndex = 5;
@@ -214,7 +214,7 @@
             // 
             this.TextBox2.Location = new System.Drawing.Point(85, 147);
             this.TextBox2.Name = "TextBox2";
-            this.TextBox2.Size = new System.Drawing.Size(164, 20);
+            this.TextBox2.Size = new System.Drawing.Size(176, 20);
             this.TextBox2.TabIndex = 3;
             this.TextBox2.Tag = "";
             this.TextBox2.UseSystemPasswordChar = true;
