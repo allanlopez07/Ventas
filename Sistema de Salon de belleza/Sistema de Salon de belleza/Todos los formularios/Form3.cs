@@ -193,5 +193,15 @@ namespace Sistema_de_Salon_de_belleza.Todos_los_formularios
         {
 
         }
+
+        private void existenciaLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void existenciaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

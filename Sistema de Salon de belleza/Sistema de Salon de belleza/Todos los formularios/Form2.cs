@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_de_Salon_de_belleza.Todos_los_formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -86,6 +87,19 @@ namespace Sistema_de_Salon_de_belleza
         private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form9Agenda = new Form9Calendario();
+            form9Agenda.ShowDialog();
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form11fac = new Form11fac();
+          //  form10Factura.MdiParent = this;
+             form11fac.ShowDialog();
         }
     }
 }

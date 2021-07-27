@@ -57,6 +57,8 @@
     <Compile Include="ClientesBL.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="DatosdeInicio.cs" />
+    <Compile Include="EmpleadosBL.cs" />
+    <Compile Include="FacturaBL.cs" />
     <Compile Include="ProductosBL.cs" />
     <Compile Include="ProveedoresBL.cs" />
     <Compile Include="SeguridadBl.cs" />
@@ -74,6 +76,10 @@
     <None Include="Properties\DataSources\BL.Rentas.ClientesBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Contexto.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.DatosdeInicio.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.EmpleadosBL+Empelados.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.EmpleadosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Factura.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Proveedores.datasource" />

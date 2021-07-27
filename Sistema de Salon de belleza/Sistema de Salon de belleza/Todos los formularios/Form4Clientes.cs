@@ -107,9 +107,6 @@ namespace Sistema_de_Salon_de_belleza
 
         }
 
-        private void activoCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

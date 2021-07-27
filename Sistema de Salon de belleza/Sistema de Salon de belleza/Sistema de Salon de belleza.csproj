@@ -63,6 +63,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form11fac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11fac.Designer.cs">
+      <DependentUpon>Form11fac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Todos los formularios\Form10Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Todos los formularios\Form10Factura.Designer.cs">
+      <DependentUpon>Form10Factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Todos los formularios\Form6Citas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +113,36 @@
     <Compile Include="Todos los formularios\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Todos los formularios\Form7Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Todos los formularios\Form7Empleados.Designer.cs">
+      <DependentUpon>Form7Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Todos los formularios\Form8Agenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Todos los formularios\Form8Agenda.Designer.cs">
+      <DependentUpon>Form8Agenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Todos los formularios\Form9Calendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Todos los formularios\Form9Calendario.Designer.cs">
+      <DependentUpon>Form9Calendario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Todos los formularios\Prueba.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Todos los formularios\Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form11fac.resx">
+      <DependentUpon>Form11fac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Todos los formularios\Form10Factura.resx">
+      <DependentUpon>Form10Factura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Todos los formularios\Form6Citas.resx">
       <DependentUpon>Form6Citas.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +171,15 @@
     <EmbeddedResource Include="Todos los formularios\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Todos los formularios\Form7Empleados.resx">
+      <DependentUpon>Form7Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Todos los formularios\Form8Agenda.resx">
+      <DependentUpon>Form8Agenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Todos los formularios\Form9Calendario.resx">
+      <DependentUpon>Form9Calendario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Todos los formularios\Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +191,11 @@
     <None Include="Properties\DataSources\BL.Rentas.Cliente1.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.ClientesBL1.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Contexto.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.EmpleadosBL+Empleados.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.EmpleadosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Factura.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.FacturaBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.FacturaDetalle.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Proveedores.datasource" />

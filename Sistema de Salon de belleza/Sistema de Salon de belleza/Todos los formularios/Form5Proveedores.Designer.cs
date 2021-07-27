@@ -88,7 +88,7 @@
             // 
             activoLabel.AutoSize = true;
             activoLabel.BackColor = System.Drawing.Color.Transparent;
-            activoLabel.Location = new System.Drawing.Point(12, 101);
+            activoLabel.Location = new System.Drawing.Point(11, 300);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 15;
@@ -98,7 +98,7 @@
             // 
             ciudadLabel.AutoSize = true;
             ciudadLabel.BackColor = System.Drawing.Color.Transparent;
-            ciudadLabel.Location = new System.Drawing.Point(12, 129);
+            ciudadLabel.Location = new System.Drawing.Point(8, 185);
             ciudadLabel.Name = "ciudadLabel";
             ciudadLabel.Size = new System.Drawing.Size(43, 13);
             ciudadLabel.TabIndex = 17;
@@ -108,7 +108,7 @@
             // 
             idLabel.AutoSize = true;
             idLabel.BackColor = System.Drawing.Color.Transparent;
-            idLabel.Location = new System.Drawing.Point(12, 155);
+            idLabel.Location = new System.Drawing.Point(12, 86);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(19, 13);
             idLabel.TabIndex = 19;
@@ -118,28 +118,27 @@
             // 
             nombreCompaniaLabel.AutoSize = true;
             nombreCompaniaLabel.BackColor = System.Drawing.Color.Transparent;
-            nombreCompaniaLabel.Location = new System.Drawing.Point(12, 181);
+            nombreCompaniaLabel.Location = new System.Drawing.Point(4, 122);
             nombreCompaniaLabel.Name = "nombreCompaniaLabel";
-            nombreCompaniaLabel.Size = new System.Drawing.Size(97, 13);
+            nombreCompaniaLabel.Size = new System.Drawing.Size(60, 13);
             nombreCompaniaLabel.TabIndex = 21;
-            nombreCompaniaLabel.Text = "Nombre Compañia:";
-            nombreCompaniaLabel.Click += new System.EventHandler(this.nombreCompaniaLabel_Click);
+            nombreCompaniaLabel.Text = " Compania:";
             // 
             // nombreContactoLabel
             // 
             nombreContactoLabel.AutoSize = true;
             nombreContactoLabel.BackColor = System.Drawing.Color.Transparent;
-            nombreContactoLabel.Location = new System.Drawing.Point(12, 207);
+            nombreContactoLabel.Location = new System.Drawing.Point(7, 153);
             nombreContactoLabel.Name = "nombreContactoLabel";
-            nombreContactoLabel.Size = new System.Drawing.Size(93, 13);
+            nombreContactoLabel.Size = new System.Drawing.Size(53, 13);
             nombreContactoLabel.TabIndex = 23;
-            nombreContactoLabel.Text = "Nombre Contacto:";
+            nombreContactoLabel.Text = "Contacto:";
             // 
             // paisLabel
             // 
             paisLabel.AutoSize = true;
             paisLabel.BackColor = System.Drawing.Color.Transparent;
-            paisLabel.Location = new System.Drawing.Point(12, 233);
+            paisLabel.Location = new System.Drawing.Point(12, 258);
             paisLabel.Name = "paisLabel";
             paisLabel.Size = new System.Drawing.Size(30, 13);
             paisLabel.TabIndex = 25;
@@ -149,7 +148,7 @@
             // 
             telefonoLabel.AutoSize = true;
             telefonoLabel.BackColor = System.Drawing.Color.Transparent;
-            telefonoLabel.Location = new System.Drawing.Point(12, 259);
+            telefonoLabel.Location = new System.Drawing.Point(7, 224);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
             telefonoLabel.TabIndex = 27;
@@ -182,7 +181,7 @@
             this.proveedoresBLBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.proveedoresBLBindingNavigator.Name = "proveedoresBLBindingNavigator";
             this.proveedoresBLBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.proveedoresBLBindingNavigator.Size = new System.Drawing.Size(925, 25);
+            this.proveedoresBLBindingNavigator.Size = new System.Drawing.Size(949, 25);
             this.proveedoresBLBindingNavigator.TabIndex = 0;
             this.proveedoresBLBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -319,9 +318,9 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewCheckBoxColumn1});
             this.listaProveedoresDataGridView.DataSource = this.listaProveedoresBindingSource;
-            this.listaProveedoresDataGridView.Location = new System.Drawing.Point(225, 72);
+            this.listaProveedoresDataGridView.Location = new System.Drawing.Point(242, 83);
             this.listaProveedoresDataGridView.Name = "listaProveedoresDataGridView";
-            this.listaProveedoresDataGridView.Size = new System.Drawing.Size(687, 353);
+            this.listaProveedoresDataGridView.Size = new System.Drawing.Size(687, 371);
             this.listaProveedoresDataGridView.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn1
@@ -370,7 +369,7 @@
             // 
             this.activoCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaProveedoresBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(115, 96);
+            this.activoCheckBox.Location = new System.Drawing.Point(76, 295);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.activoCheckBox.TabIndex = 16;
@@ -379,50 +378,50 @@
             // ciudadTextBox
             // 
             this.ciudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProveedoresBindingSource, "Ciudad", true));
-            this.ciudadTextBox.Location = new System.Drawing.Point(115, 126);
+            this.ciudadTextBox.Location = new System.Drawing.Point(76, 182);
             this.ciudadTextBox.Name = "ciudadTextBox";
-            this.ciudadTextBox.Size = new System.Drawing.Size(104, 20);
+            this.ciudadTextBox.Size = new System.Drawing.Size(160, 20);
             this.ciudadTextBox.TabIndex = 18;
             // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProveedoresBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(115, 152);
+            this.idTextBox.Location = new System.Drawing.Point(76, 83);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(104, 20);
+            this.idTextBox.Size = new System.Drawing.Size(160, 20);
             this.idTextBox.TabIndex = 20;
             // 
             // nombreCompaniaTextBox
             // 
             this.nombreCompaniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProveedoresBindingSource, "NombreCompania", true));
-            this.nombreCompaniaTextBox.Location = new System.Drawing.Point(115, 178);
+            this.nombreCompaniaTextBox.Location = new System.Drawing.Point(76, 117);
             this.nombreCompaniaTextBox.Name = "nombreCompaniaTextBox";
-            this.nombreCompaniaTextBox.Size = new System.Drawing.Size(104, 20);
+            this.nombreCompaniaTextBox.Size = new System.Drawing.Size(160, 20);
             this.nombreCompaniaTextBox.TabIndex = 22;
             // 
             // nombreContactoTextBox
             // 
             this.nombreContactoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProveedoresBindingSource, "NombreContacto", true));
-            this.nombreContactoTextBox.Location = new System.Drawing.Point(115, 204);
+            this.nombreContactoTextBox.Location = new System.Drawing.Point(76, 149);
             this.nombreContactoTextBox.Name = "nombreContactoTextBox";
-            this.nombreContactoTextBox.Size = new System.Drawing.Size(104, 20);
+            this.nombreContactoTextBox.Size = new System.Drawing.Size(160, 20);
             this.nombreContactoTextBox.TabIndex = 24;
             // 
             // paisTextBox
             // 
             this.paisTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProveedoresBindingSource, "Pais", true));
-            this.paisTextBox.Location = new System.Drawing.Point(115, 230);
+            this.paisTextBox.Location = new System.Drawing.Point(76, 255);
             this.paisTextBox.Name = "paisTextBox";
-            this.paisTextBox.Size = new System.Drawing.Size(104, 20);
+            this.paisTextBox.Size = new System.Drawing.Size(160, 20);
             this.paisTextBox.TabIndex = 26;
             // 
             // telefonoTextBox
             // 
             this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProveedoresBindingSource, "Telefono", true));
-            this.telefonoTextBox.Location = new System.Drawing.Point(115, 256);
+            this.telefonoTextBox.Location = new System.Drawing.Point(76, 221);
             this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(104, 20);
+            this.telefonoTextBox.Size = new System.Drawing.Size(160, 20);
             this.telefonoTextBox.TabIndex = 28;
             // 
             // Form5Proveedores
@@ -430,8 +429,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(925, 477);
+            this.ClientSize = new System.Drawing.Size(949, 477);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(ciudadLabel);
@@ -448,10 +446,9 @@
             this.Controls.Add(this.telefonoTextBox);
             this.Controls.Add(this.listaProveedoresDataGridView);
             this.Controls.Add(this.proveedoresBLBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form5Proveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Proveedores";
+            this.Text = "Form5Proveedores";
             this.Load += new System.EventHandler(this.Form5Proveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBLBindingNavigator)).EndInit();
             this.proveedoresBLBindingNavigator.ResumeLayout(false);

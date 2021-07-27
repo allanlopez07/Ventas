@@ -138,8 +138,17 @@ namespace BL.Rentas
             producto2.CategoriaId = 001;
             contexto.Productos.Add(producto2);
 
+            var Empleado1 = new EmpleadosBL.Empleados();
+            Empleado1.Id = 001;
+            Empleado1.Nombre = "Gladys";
+            Empleado1.Apellido = "Sosa";
+            Empleado1.Correo = "Gladyssosa22@gmail.com";
+            Empleado1.Direccion = "Bendeck";
+            Empleado1.Fecha_de_Ingreso = "2-2-2020";
+            Empleado1.Telefono = 99080006;
+            Empleado1.Activo = true;
+            contexto.Empleados.Add(Empleado1);
 
-            base.Seed(contexto);
         }
     }
 }

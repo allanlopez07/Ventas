@@ -77,11 +77,11 @@ namespace BL.Rentas
             resultado.Exitoso = true;
 
 
-            if (string.IsNullOrEmpty(citas.Fecha_Cita) == true)
+          /*  if (string.IsNullOrEmpty(citas.Fecha_Cita) == true)
             {
                 resultado.Mensaje = "Ingrese la fecha de la cita";
                 resultado.Exitoso = false;
-            }
+            }*/
             return resultado;
         }
 

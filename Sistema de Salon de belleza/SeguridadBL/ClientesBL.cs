@@ -80,7 +80,14 @@ namespace BL.Rentas
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
+            if (cliente == null)
+            {
+                resultado.Mensaje = "Agrege un cliente valido";
+                resultado.Exitoso = false;
 
+                return resultado;
+
+            }
 
             if (string.IsNullOrEmpty(cliente.Apellido) == true)
             {

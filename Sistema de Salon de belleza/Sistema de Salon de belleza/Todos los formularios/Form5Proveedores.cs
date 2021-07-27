@@ -28,7 +28,7 @@ namespace Sistema_de_Salon_de_belleza
 
         private void proveedoresBLBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            var proveedores = (BL.Rentas.Proveedores)listaProveedoresBindingSource.Current;
+            var proveedores = (Proveedores) listaProveedoresBindingSource.Current;
 
             var resultado = _proveedores.GuardarProveedores(proveedores);
             if (resultado.Exitoso == true)
@@ -98,11 +98,6 @@ namespace Sistema_de_Salon_de_belleza
         {
             _proveedores.CancelarCambios();
             DeshabilitarHabilitarHabilitarBotones(true);
-
-        }
-
-        private void nombreCompaniaLabel_Click(object sender, EventArgs e)
-        {
 
         }
     }

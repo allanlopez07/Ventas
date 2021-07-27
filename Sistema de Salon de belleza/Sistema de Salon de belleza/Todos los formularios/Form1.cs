@@ -69,5 +69,16 @@ namespace Sistema_de_Salon_de_belleza
             }
             
         }
+
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (TextBox1.Text != "")
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    TextBox2.Focus();
+                }
+            }
+        }
     }
 }

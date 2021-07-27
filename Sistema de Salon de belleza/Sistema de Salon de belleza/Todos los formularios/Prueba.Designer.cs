@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prueba));
             System.Windows.Forms.Label descripcionLabel1;
             System.Windows.Forms.Label idLabel1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prueba));
             this.listaTiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaTiposBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -47,10 +47,10 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.listaTiposBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.listaTiposDataGridView = new System.Windows.Forms.DataGridView();
+            this.tipoBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tipoBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descripcionTextBox1 = new System.Windows.Forms.TextBox();
             this.idTextBox1 = new System.Windows.Forms.TextBox();
             descripcionLabel1 = new System.Windows.Forms.Label();
@@ -59,27 +59,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaTiposBindingNavigator)).BeginInit();
             this.listaTiposBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaTiposDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // descripcionLabel1
-            // 
-            descripcionLabel1.AutoSize = true;
-            descripcionLabel1.Location = new System.Drawing.Point(16, 67);
-            descripcionLabel1.Name = "descripcionLabel1";
-            descripcionLabel1.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel1.TabIndex = 6;
-            descripcionLabel1.Text = "Descripcion:";
-            // 
-            // idLabel1
-            // 
-            idLabel1.AutoSize = true;
-            idLabel1.Location = new System.Drawing.Point(31, 97);
-            idLabel1.Name = "idLabel1";
-            idLabel1.Size = new System.Drawing.Size(19, 13);
-            idLabel1.TabIndex = 8;
-            idLabel1.Text = "Id:";
             // 
             // listaTiposBindingSource
             // 
@@ -222,6 +204,14 @@
             this.listaTiposDataGridView.Size = new System.Drawing.Size(300, 220);
             this.listaTiposDataGridView.TabIndex = 1;
             // 
+            // tipoBLBindingSource
+            // 
+            this.tipoBLBindingSource.DataSource = typeof(BL.Rentas.TipoBL);
+            // 
+            // tipoBindingSource
+            // 
+            this.tipoBindingSource.DataSource = typeof(BL.Rentas.Tipo);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -234,13 +224,14 @@
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
-            // tipoBindingSource
+            // descripcionLabel1
             // 
-            this.tipoBindingSource.DataSource = typeof(BL.Rentas.Tipo);
-            // 
-            // tipoBLBindingSource
-            // 
-            this.tipoBLBindingSource.DataSource = typeof(BL.Rentas.TipoBL);
+            descripcionLabel1.AutoSize = true;
+            descripcionLabel1.Location = new System.Drawing.Point(16, 67);
+            descripcionLabel1.Name = "descripcionLabel1";
+            descripcionLabel1.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel1.TabIndex = 6;
+            descripcionLabel1.Text = "Descripcion:";
             // 
             // descripcionTextBox1
             // 
@@ -249,6 +240,15 @@
             this.descripcionTextBox1.Name = "descripcionTextBox1";
             this.descripcionTextBox1.Size = new System.Drawing.Size(100, 20);
             this.descripcionTextBox1.TabIndex = 7;
+            // 
+            // idLabel1
+            // 
+            idLabel1.AutoSize = true;
+            idLabel1.Location = new System.Drawing.Point(31, 97);
+            idLabel1.Name = "idLabel1";
+            idLabel1.Size = new System.Drawing.Size(19, 13);
+            idLabel1.TabIndex = 8;
+            idLabel1.Text = "Id:";
             // 
             // idTextBox1
             // 
@@ -269,7 +269,6 @@
             this.Controls.Add(this.idTextBox1);
             this.Controls.Add(this.listaTiposDataGridView);
             this.Controls.Add(this.listaTiposBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Prueba";
             this.Text = "Prueba";
             this.Load += new System.EventHandler(this.Prueba_Load);
@@ -278,8 +277,8 @@
             this.listaTiposBindingNavigator.ResumeLayout(false);
             this.listaTiposBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaTiposDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
