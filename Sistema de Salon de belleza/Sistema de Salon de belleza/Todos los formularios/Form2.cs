@@ -80,7 +80,7 @@ namespace Sistema_de_Salon_de_belleza
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var form6Citas = new Form6Citas();
+            var form6Citas = new FormReportedeProductos();
             form6Citas.ShowDialog();
         }
 
@@ -89,17 +89,39 @@ namespace Sistema_de_Salon_de_belleza
             
         }
 
-        private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void reportesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var form9Agenda = new Form9Calendario();
-            form9Agenda.ShowDialog();
+
         }
 
-        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form11fac = new Form11fac();
-          //  form10Factura.MdiParent = this;
-             form11fac.ShowDialog();
+            var Facturas = new Facturas();
+            Facturas.ShowDialog();
+        }
+
+        private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form9ReporteProductos = new Form9ReporteProductos();
+            form9ReporteProductos.ShowDialog();
+        }
+
+        private void reporteDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form10ReporteFacturas = new Form10ReporteFacturas();
+            form10ReporteFacturas.ShowDialog();
+        }
+
+        private void reporteDeVentasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var form11ReporteVentas = new Form11ReporteVentas();
+            form11ReporteVentas.ShowDialog();
+        }
+
+        private void reporteDeCitasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var form12ReporteCitas = new Form12ReporteCitas();
+            form12ReporteCitas.ShowDialog();
         }
     }
 }

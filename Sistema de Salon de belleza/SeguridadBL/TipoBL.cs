@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL.Rentas 
+namespace BL.Rentas
 {
-    
-   public class TipoBL
+
+    public class TipoBL
     {
         Contexto _contexto;
         public BindingList<Tipo> ListaTipos { get; set; }

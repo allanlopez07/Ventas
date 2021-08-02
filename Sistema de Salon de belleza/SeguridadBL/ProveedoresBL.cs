@@ -77,17 +77,17 @@ namespace BL.Rentas
 
 
 
-                 if (string.IsNullOrEmpty(proveedores.NombreContacto) == true)
-                 {
-                     resultado.Mensaje = "Ingrese el nombre del contacto";
-                     resultado.Exitoso = false;
-                 }
+            if (string.IsNullOrEmpty(proveedores.NombreContacto) == true)
+            {
+                resultado.Mensaje = "Ingrese el nombre del contacto";
+                resultado.Exitoso = false;
+            }
 
-                if (string.IsNullOrEmpty(proveedores.NombreCompania) == true)
-                 {
-                     resultado.Mensaje = "Ingrese el nombre de la compañia";
-                     resultado.Exitoso = false;
-                 }
+            if (string.IsNullOrEmpty(proveedores.NombreCompania) == true)
+            {
+                resultado.Mensaje = "Ingrese el nombre de la compañia";
+                resultado.Exitoso = false;
+            }
             return resultado;
         }
     }
@@ -102,5 +102,5 @@ namespace BL.Rentas
         public bool Activo { get; set; }
     }
 
-    
+
 }

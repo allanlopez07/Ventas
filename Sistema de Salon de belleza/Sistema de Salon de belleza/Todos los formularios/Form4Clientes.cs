@@ -20,7 +20,8 @@ namespace Sistema_de_Salon_de_belleza
             InitializeComponent();
 
             _clientes = new ClientesBL();
-            listaClientesBindingSource.DataSource = _clientes.ObtenerClientes();
+            listaClientesDataGridView.DataSource = _clientes.ObtenerClientes();
+           
         }
 
         private void Form4Clientes_Load(object sender, EventArgs e)
@@ -28,85 +29,24 @@ namespace Sistema_de_Salon_de_belleza
 
         }
 
-        private void clientesBLBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void activoCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            var cliente = (Cliente) listaClientesBindingSource.Current;
 
-            var resultado = _clientes.GuardarCliente(cliente);
-            if (resultado.Exitoso == true)
-            {
-                listaClientesBindingSource.ResetBindings(false);
-                DeshabilitarHabilitarHabilitarBotones(true);
-                MessageBox.Show("Cliente Guardado");
-            }
-            else
-            {
-                MessageBox.Show(resultado.Mensaje);
-            }
+        }
+
+        private void activoLabel_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            _clientes.AgregarClientes();
-            listaClientesBindingSource.MoveLast();
 
-            DeshabilitarHabilitarHabilitarBotones(false);
-        }
-
-        private void DeshabilitarHabilitarHabilitarBotones(bool valor)
-        {
-            bindingNavigatorMoveFirstItem.Enabled = valor;
-            bindingNavigatorMoveLastItem.Enabled = valor;
-            bindingNavigatorMovePreviousItem.Enabled = valor;
-            bindingNavigatorMoveNextItem.Enabled = valor;
-            bindingNavigatorPositionItem.Enabled = valor;
-
-            bindingNavigatorAddNewItem.Enabled = valor;
-            bindingNavigatorDeleteItem.Enabled = valor;
-            toolStripButtonCancelar.Visible = !valor;
         }
 
         private void listaClientesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-            if (idTextBox.Text != "")
-            {
-                var resultado = MessageBox.Show("Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
-                if (resultado == DialogResult.Yes)
-                {
-                    var idcliente = Convert.ToInt32(idTextBox.Text);
-                    Eliminar(idcliente);
-                }
-                
-            }
-        }
-
-        private void Eliminar(int idcliente)
-        {
-            
-            var resultado = _clientes.EliminarClientes(idcliente);
-
-            if (resultado == true)
-            {
-                listaClientesBindingSource.ResetBindings(false);
-            }
-            else
-            {
-                MessageBox.Show("Ocurrio un erro al eliminar el cliente");
-            }
-        }
-
-        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
-        {
-            _clientes.CancelarCambios();
-            DeshabilitarHabilitarHabilitarBotones(true);
-
-        }
-
-        
     }
 }

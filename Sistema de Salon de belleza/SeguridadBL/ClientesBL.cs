@@ -11,7 +11,7 @@ namespace BL.Rentas
 {
     public class ClientesBL
     {
-         Contexto _contexto;
+        Contexto _contexto;
         public BindingList<Cliente> ListaClientes { get; set; }
 
         public ClientesBL()
@@ -62,12 +62,12 @@ namespace BL.Rentas
             }
             return false;
         }
-    /*    public static implicit operator ClientesBL(Cliente v)
-        {
-            throw new NotImplementedException();
-        }*/
+        /*    public static implicit operator ClientesBL(Cliente v)
+            {
+                throw new NotImplementedException();
+            }*/
 
-            public void CancelarCambios()
+        public void CancelarCambios()
         {
             foreach (var item in _contexto.ChangeTracker.Entries())
             {
@@ -107,15 +107,15 @@ namespace BL.Rentas
     }
     public class Cliente
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
         public bool activo { get; set; }
- //       public int ClienteId { get; set; }
         
+
     }
 
 

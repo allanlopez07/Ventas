@@ -246,6 +246,7 @@
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigatorMoveLastItem_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -456,6 +457,7 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "ANULADO";
             this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form11fac
             // 

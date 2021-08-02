@@ -5,14 +5,15 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BL.Rentas;
 
 namespace BL.Rentas
 {
-   public class FacturaBL
+    public class FacturaBL
     {
         Contexto _contexto;
 
-        public BindingList<Factura> ListaFacturas { get; set;  }
+        public BindingList<Factura> ListaFacturas { get; set; }
 
         public FacturaBL()
         {
@@ -80,9 +81,9 @@ namespace BL.Rentas
 
                 if (producto != null)
                 {
-                    if(factura.Activo ==true)
-                    { 
-                    producto.Existencia = producto.Existencia - detalle.Cantidad;
+                    if (factura.Activo == true)
+                    {
+                        producto.Existencia = producto.Existencia - detalle.Cantidad;
                     }
                     else
                     {
@@ -93,7 +94,7 @@ namespace BL.Rentas
             }
         }
 
-        private Resultado Validar (Factura factura)
+        private Resultado Validar(Factura factura)
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;
@@ -158,7 +159,7 @@ namespace BL.Rentas
 
                         subtotal += detalle.Total;
                     }
-                    
+
                 }
                 factura.Subtotal = subtotal;
                 factura.Impuesto = subtotal * 0.15;
@@ -189,15 +190,15 @@ namespace BL.Rentas
         public DateTime Fecha { get; set; }
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
-        public BindingList<FacturaDetalle> FacturaDetalle { get; set; } 
+        public BindingList<FacturaDetalle> FacturaDetalle { get; set; }
         public double Subtotal { get; set; }
-        public double  Impuesto { get; set; }
-        public double  Total { get; set; }
+        public double Impuesto { get; set; }
+        public double Total { get; set; }
         public bool Activo { get; set; }
 
         public Factura()
         {
-            Fecha = DateTime.Now;FacturaDetalle = new BindingList<FacturaDetalle>();
+            Fecha = DateTime.Now; FacturaDetalle = new BindingList<FacturaDetalle>();
 
             Activo = true;
         }

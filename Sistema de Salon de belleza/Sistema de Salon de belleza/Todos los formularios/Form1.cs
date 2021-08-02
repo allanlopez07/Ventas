@@ -50,7 +50,6 @@ namespace Sistema_de_Salon_de_belleza
             string usuario;
             string contrasena;
 
-
             usuario = TextBox1.Text;
             contrasena = TextBox2.Text;
 
@@ -58,27 +57,17 @@ namespace Sistema_de_Salon_de_belleza
             Button2.Text = "Verificando...";
             Application.DoEvents();
 
-            var resultado = _seguridad.Automatizar(usuario,contrasena);
+            var resultado = _seguridad.Automatizar(usuario, contrasena);
 
             if (resultado == true)
             {
                 this.Close();
-            }else
+            }
+            else
             {
                 MessageBox.Show("--- Usuario y contraseña incorrectos ---");
             }
-            
-        }
 
-        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (TextBox1.Text != "")
-            {
-                if (e.KeyChar == (char)Keys.Enter)
-                {
-                    TextBox2.Focus();
-                }
-            }
         }
     }
 }

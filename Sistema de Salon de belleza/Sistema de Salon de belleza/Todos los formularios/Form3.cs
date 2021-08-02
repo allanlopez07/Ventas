@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,26 +15,17 @@ namespace Sistema_de_Salon_de_belleza.Todos_los_formularios
     {
 
         ProductosBL _productos;
-        CategoriaBL _categorias;
-        TipoBL _tipos; 
+
         public FormProductos() 
         {
             InitializeComponent();
 
             _productos = new ProductosBL();
             ListaProductosBindingSource.DataSource = _productos.ObtenerProductos();
-
-            _categorias = new CategoriaBL();
-            listaCategoriasBindingSource.DataSource = _categorias.ObtenerCategorias();
-
-            _tipos = new TipoBL(); 
-            listaTiposBindingSource.DataSource = _tipos.ObtenerTipos(); 
         }
 
         private void Productos_Load(object sender, EventArgs e)
         {
-            
-            DeshabilitarHabilitarHabilitarBotones(true);
 
         }
 
@@ -47,159 +37,114 @@ namespace Sistema_de_Salon_de_belleza.Todos_los_formularios
         private void seguridadBlBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             ListaProductosBindingSource.EndEdit();
-            var producto = (Producto) ListaProductosBindingSource.Current;
+            var producto = (Producto)ListaProductosBindingSource.Current;
 
-            if (fotoPictureBox.Image!= null)
-            {
-                producto.Foto = Program.imageToByteArray(fotoPictureBox.Image);
-            }
-            else
-            {
-                producto.Foto = null;
-            }
             var resultado = _productos.GuardarProducto(producto);
-            if (resultado.Exitoso == true)
+
+            if (resultado.Exitoso==true)
             {
                 ListaProductosBindingSource.ResetBindings(false);
-                DeshabilitarHabilitarHabilitarBotones(true);
+                DeshabilitarHabilitarBotones(true);
                 MessageBox.Show("Producto Guardado");
+                
             }
             else
             {
                 MessageBox.Show(resultado.Mensaje);
             }
-          //  MessageBox.Show(producto);
+
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-             
-            _productos.AgrearProducto();
+            _productos.AgregarProducto();
             ListaProductosBindingSource.MoveLast();
 
-            DeshabilitarHabilitarHabilitarBotones(false);
-     
+            DeshabilitarHabilitarBotones(false);
+
+
         }
 
-        private void DeshabilitarHabilitarHabilitarBotones(bool valor)
+        private void DeshabilitarHabilitarBotones(bool valor)
         {
             bindingNavigatorMoveFirstItem.Enabled = valor;
             bindingNavigatorMoveLastItem.Enabled = valor;
             bindingNavigatorMovePreviousItem.Enabled = valor;
             bindingNavigatorMoveNextItem.Enabled = valor;
-            bindingNavigatorPositionItem.Enabled = valor;
 
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripButtonCancelar.Visible = !valor;
 
         }
-         
+
+
+
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            
-            if (idTextBox.Text != "")
+
+            if (textBox3.Text !="")
             {
                 var resultado = MessageBox.Show("Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
-                    var id = Convert.ToInt32(idTextBox.Text);
+                    var id = Convert.ToInt32(textBox3.Text);
                     Eliminar(id);
                 }
-                
             }
-       }
+        }
 
         private void Eliminar(int id)
         {
+
+           
             var resultado = _productos.EliminarProducto(id);
 
             if (resultado == true)
             {
                 ListaProductosBindingSource.ResetBindings(false);
+                DeshabilitarHabilitarBotones(true);
             }
             else
             {
-                MessageBox.Show("Ocurrio un erro al eliminar el producto");
+                MessageBox.Show("Ocurrio un error al Eliminar el Producto");
             }
-        }
-
-        private void seguridadBlBindingNavigator_RefreshItems(object sender, EventArgs e)
-        {
-            //DeshabilitarHabilitarHabilitarBotones(true);
 
         }
+
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
-            _productos.CancelarCambios();
-            DeshabilitarHabilitarHabilitarBotones(true);
+            DeshabilitarHabilitarBotones(true);
+            Eliminar(0);
         }
 
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var producto = (Producto)ListaProductosBindingSource.Current;
-            if (producto != null)
-            {
-                openFileDialog1.ShowDialog();
-                var archivo = openFileDialog1.FileName;
-
-                if (archivo != "")
-                {
-                    var fileInfo = new FileInfo(archivo);
-                    var fileStream = fileInfo.OpenRead();
-
-                    fotoPictureBox.Image = Image.FromStream(fileStream);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Cree un producto antes de asignarle una imagen");
-            }
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            fotoPictureBox.Image = null;
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void citasIdTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void clienteIdTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tipoIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void existenciaLabel_Click(object sender, EventArgs e)
+        private void descripcionTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void existenciaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void seguridadBlBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
 
         }

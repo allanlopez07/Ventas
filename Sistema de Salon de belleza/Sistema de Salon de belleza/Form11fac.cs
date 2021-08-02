@@ -159,5 +159,15 @@ namespace Sistema_de_Salon_de_belleza
                 label1.Visible = false;
             }
         }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

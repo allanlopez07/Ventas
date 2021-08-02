@@ -1,6 +1,6 @@
 ﻿namespace Sistema_de_Salon_de_belleza
 {
-    partial class Form6Citas
+    partial class FormReportedeProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label clienteLabel;
             System.Windows.Forms.Label empleadoLabel;
-            System.Windows.Forms.Label horaLabel;
-            System.Windows.Forms.Label idLabel;
-            System.Windows.Forms.Label servicioLabel;
+            System.Windows.Forms.Label estatusLabel;
             System.Windows.Forms.Label fecha_CitaLabel;
-            System.Windows.Forms.Label estatusLabel1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6Citas));
+            System.Windows.Forms.Label horaLabel;
+            System.Windows.Forms.Label servicioLabel;
+            System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportedeProductos));
             this.listaCitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaCitasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -48,108 +50,112 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaCitasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
-            this.citasBL_CitasDataGridView = new System.Windows.Forms.DataGridView();
+            this.listaCitasDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clienteTextBox = new System.Windows.Forms.TextBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.estatusComboBox = new System.Windows.Forms.ComboBox();
+            this.horaComboBox = new System.Windows.Forms.ComboBox();
             this.servicioTextBox = new System.Windows.Forms.TextBox();
             this.fecha_CitaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.estatusComboBox = new System.Windows.Forms.ComboBox();
-            this.empleadoComboBox = new System.Windows.Forms.ComboBox();
-            this.listaEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.horaComboBox = new System.Windows.Forms.ComboBox();
             clienteLabel = new System.Windows.Forms.Label();
             empleadoLabel = new System.Windows.Forms.Label();
-            horaLabel = new System.Windows.Forms.Label();
-            idLabel = new System.Windows.Forms.Label();
-            servicioLabel = new System.Windows.Forms.Label();
+            estatusLabel = new System.Windows.Forms.Label();
             fecha_CitaLabel = new System.Windows.Forms.Label();
-            estatusLabel1 = new System.Windows.Forms.Label();
+            horaLabel = new System.Windows.Forms.Label();
+            servicioLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitasBindingNavigator)).BeginInit();
             this.listaCitasBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.citasBL_CitasDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaEmpleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCitasDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // clienteLabel
             // 
             clienteLabel.AutoSize = true;
             clienteLabel.BackColor = System.Drawing.Color.Transparent;
-            clienteLabel.Location = new System.Drawing.Point(2, 126);
+            clienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            clienteLabel.Location = new System.Drawing.Point(5, 126);
             clienteLabel.Name = "clienteLabel";
-            clienteLabel.Size = new System.Drawing.Size(42, 13);
-            clienteLabel.TabIndex = 15;
+            clienteLabel.Size = new System.Drawing.Size(62, 20);
+            clienteLabel.TabIndex = 2;
             clienteLabel.Text = "Cliente:";
             // 
             // empleadoLabel
             // 
             empleadoLabel.AutoSize = true;
             empleadoLabel.BackColor = System.Drawing.Color.Transparent;
-            empleadoLabel.Location = new System.Drawing.Point(3, 163);
+            empleadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            empleadoLabel.Location = new System.Drawing.Point(5, 163);
             empleadoLabel.Name = "empleadoLabel";
-            empleadoLabel.Size = new System.Drawing.Size(57, 13);
-            empleadoLabel.TabIndex = 17;
+            empleadoLabel.Size = new System.Drawing.Size(85, 20);
+            empleadoLabel.TabIndex = 4;
             empleadoLabel.Text = "Empleado:";
             // 
-            // horaLabel
+            // estatusLabel
             // 
-            horaLabel.AutoSize = true;
-            horaLabel.BackColor = System.Drawing.Color.Transparent;
-            horaLabel.Location = new System.Drawing.Point(3, 240);
-            horaLabel.Name = "horaLabel";
-            horaLabel.Size = new System.Drawing.Size(33, 13);
-            horaLabel.TabIndex = 23;
-            horaLabel.Text = "Hora:";
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.BackColor = System.Drawing.Color.Transparent;
-            idLabel.Location = new System.Drawing.Point(8, 91);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 25;
-            idLabel.Text = "Id:";
-            // 
-            // servicioLabel
-            // 
-            servicioLabel.AutoSize = true;
-            servicioLabel.BackColor = System.Drawing.Color.Transparent;
-            servicioLabel.Location = new System.Drawing.Point(4, 290);
-            servicioLabel.Name = "servicioLabel";
-            servicioLabel.Size = new System.Drawing.Size(48, 13);
-            servicioLabel.TabIndex = 27;
-            servicioLabel.Text = "Servicio:";
+            estatusLabel.AutoSize = true;
+            estatusLabel.BackColor = System.Drawing.Color.Transparent;
+            estatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            estatusLabel.Location = new System.Drawing.Point(5, 199);
+            estatusLabel.Name = "estatusLabel";
+            estatusLabel.Size = new System.Drawing.Size(68, 20);
+            estatusLabel.TabIndex = 6;
+            estatusLabel.Text = "Estatus:";
             // 
             // fecha_CitaLabel
             // 
             fecha_CitaLabel.AutoSize = true;
             fecha_CitaLabel.BackColor = System.Drawing.Color.Transparent;
-            fecha_CitaLabel.Location = new System.Drawing.Point(1, 331);
+            fecha_CitaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fecha_CitaLabel.Location = new System.Drawing.Point(5, 302);
             fecha_CitaLabel.Name = "fecha_CitaLabel";
-            fecha_CitaLabel.Size = new System.Drawing.Size(61, 13);
-            fecha_CitaLabel.TabIndex = 30;
+            fecha_CitaLabel.Size = new System.Drawing.Size(90, 20);
+            fecha_CitaLabel.TabIndex = 8;
             fecha_CitaLabel.Text = "Fecha Cita:";
             // 
-            // estatusLabel1
+            // horaLabel
             // 
-            estatusLabel1.AutoSize = true;
-            estatusLabel1.BackColor = System.Drawing.Color.Transparent;
-            estatusLabel1.Location = new System.Drawing.Point(4, 196);
-            estatusLabel1.Name = "estatusLabel1";
-            estatusLabel1.Size = new System.Drawing.Size(45, 13);
-            estatusLabel1.TabIndex = 31;
-            estatusLabel1.Text = "Estatus:";
+            horaLabel.AutoSize = true;
+            horaLabel.BackColor = System.Drawing.Color.Transparent;
+            horaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            horaLabel.Location = new System.Drawing.Point(5, 232);
+            horaLabel.Name = "horaLabel";
+            horaLabel.Size = new System.Drawing.Size(48, 20);
+            horaLabel.TabIndex = 10;
+            horaLabel.Text = "Hora:";
+            // 
+            // servicioLabel
+            // 
+            servicioLabel.AutoSize = true;
+            servicioLabel.BackColor = System.Drawing.Color.Transparent;
+            servicioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            servicioLabel.Location = new System.Drawing.Point(5, 265);
+            servicioLabel.Name = "servicioLabel";
+            servicioLabel.Size = new System.Drawing.Size(68, 20);
+            servicioLabel.TabIndex = 12;
+            servicioLabel.Text = "Servicio:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(5, 91);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(23, 20);
+            label1.TabIndex = 35;
+            label1.Text = "Id";
+            label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // listaCitasBindingSource
             // 
@@ -157,10 +163,10 @@
             // 
             // listaCitasBindingNavigator
             // 
-            this.listaCitasBindingNavigator.AddNewItem = null;
+            this.listaCitasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.listaCitasBindingNavigator.BindingSource = this.listaCitasBindingSource;
             this.listaCitasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.listaCitasBindingNavigator.DeleteItem = null;
+            this.listaCitasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.listaCitasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -182,9 +188,19 @@
             this.listaCitasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaCitasBindingNavigator.Name = "listaCitasBindingNavigator";
             this.listaCitasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaCitasBindingNavigator.Size = new System.Drawing.Size(916, 25);
+            this.listaCitasBindingNavigator.Size = new System.Drawing.Size(934, 25);
             this.listaCitasBindingNavigator.TabIndex = 0;
             this.listaCitasBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -192,6 +208,16 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -253,29 +279,10 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
             // listaCitasBindingNavigatorSaveItem
             // 
             this.listaCitasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.listaCitasBindingNavigatorSaveItem.Enabled = false;
             this.listaCitasBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("listaCitasBindingNavigatorSaveItem.Image")));
             this.listaCitasBindingNavigatorSaveItem.Name = "listaCitasBindingNavigatorSaveItem";
             this.listaCitasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
@@ -290,94 +297,89 @@
             this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
             this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
             this.toolStripButtonCancelar.Text = "Cancelar";
-            this.toolStripButtonCancelar.Visible = false;
-            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // citasBL_CitasDataGridView
+            // listaCitasDataGridView
             // 
-            this.citasBL_CitasDataGridView.AutoGenerateColumns = false;
-            this.citasBL_CitasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.citasBL_CitasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listaCitasDataGridView.AutoGenerateColumns = false;
+            this.listaCitasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaCitasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.citasBL_CitasDataGridView.DataSource = this.listaCitasBindingSource;
-            this.citasBL_CitasDataGridView.Location = new System.Drawing.Point(210, 53);
-            this.citasBL_CitasDataGridView.Name = "citasBL_CitasDataGridView";
-            this.citasBL_CitasDataGridView.Size = new System.Drawing.Size(669, 421);
-            this.citasBL_CitasDataGridView.TabIndex = 15;
+            this.dataGridViewTextBoxColumn6});
+            this.listaCitasDataGridView.DataSource = this.listaCitasBindingSource;
+            this.listaCitasDataGridView.Location = new System.Drawing.Point(262, 46);
+            this.listaCitasDataGridView.Name = "listaCitasDataGridView";
+            this.listaCitasDataGridView.Size = new System.Drawing.Size(642, 359);
+            this.listaCitasDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Fecha_Cita";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Fecha_Cita";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Fecha_Cita";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha_Cita";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Hora";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Hora";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Hora";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Hora";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Cliente";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Cliente";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cliente";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Empleado";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Empleado";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Empleado";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Empleado";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Servicio";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Servicio";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Servicio";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Servicio";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Estatus";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Estatus";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // dataGridViewTextBoxColumn7
+            // textBox1
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Estatus";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Estatus";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Id", true));
+            this.textBox1.Location = new System.Drawing.Point(107, 91);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(142, 20);
+            this.textBox1.TabIndex = 37;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // clienteTextBox
+            // textBox2
             // 
-            this.clienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Cliente", true));
-            this.clienteTextBox.Location = new System.Drawing.Point(64, 122);
-            this.clienteTextBox.Name = "clienteTextBox";
-            this.clienteTextBox.Size = new System.Drawing.Size(142, 20);
-            this.clienteTextBox.TabIndex = 16;
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Cliente", true));
+            this.textBox2.Location = new System.Drawing.Point(107, 126);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(142, 20);
+            this.textBox2.TabIndex = 38;
             // 
-            // idTextBox
+            // comboBox1
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(64, 88);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(142, 20);
-            this.idTextBox.TabIndex = 26;
-            // 
-            // servicioTextBox
-            // 
-            this.servicioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Servicio", true));
-            this.servicioTextBox.Location = new System.Drawing.Point(65, 283);
-            this.servicioTextBox.Name = "servicioTextBox";
-            this.servicioTextBox.Size = new System.Drawing.Size(141, 20);
-            this.servicioTextBox.TabIndex = 28;
-            // 
-            // fecha_CitaDateTimePicker
-            // 
-            this.fecha_CitaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaCitasBindingSource, "Fecha_Cita", true));
-            this.fecha_CitaDateTimePicker.Location = new System.Drawing.Point(64, 327);
-            this.fecha_CitaDateTimePicker.Name = "fecha_CitaDateTimePicker";
-            this.fecha_CitaDateTimePicker.Size = new System.Drawing.Size(142, 20);
-            this.fecha_CitaDateTimePicker.TabIndex = 31;
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Empleado", true));
+            this.comboBox1.DisplayMember = "Nombre";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(107, 162);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(142, 21);
+            this.comboBox1.TabIndex = 39;
+            this.comboBox1.ValueMember = "Id";
             // 
             // estatusComboBox
             // 
@@ -386,26 +388,10 @@
             this.estatusComboBox.Items.AddRange(new object[] {
             "Programada",
             "En progreso"});
-            this.estatusComboBox.Location = new System.Drawing.Point(64, 193);
+            this.estatusComboBox.Location = new System.Drawing.Point(107, 198);
             this.estatusComboBox.Name = "estatusComboBox";
             this.estatusComboBox.Size = new System.Drawing.Size(142, 21);
-            this.estatusComboBox.TabIndex = 32;
-            // 
-            // empleadoComboBox
-            // 
-            this.empleadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Empleado", true));
-            this.empleadoComboBox.DataSource = this.listaEmpleadosBindingSource;
-            this.empleadoComboBox.DisplayMember = "Nombre";
-            this.empleadoComboBox.FormattingEnabled = true;
-            this.empleadoComboBox.Location = new System.Drawing.Point(66, 156);
-            this.empleadoComboBox.Name = "empleadoComboBox";
-            this.empleadoComboBox.Size = new System.Drawing.Size(138, 21);
-            this.empleadoComboBox.TabIndex = 33;
-            this.empleadoComboBox.ValueMember = "Id";
-            // 
-            // listaEmpleadosBindingSource
-            // 
-            this.listaEmpleadosBindingSource.DataSource = typeof(BL.Rentas.EmpleadosBL.Empleados);
+            this.estatusComboBox.TabIndex = 40;
             // 
             // horaComboBox
             // 
@@ -419,34 +405,50 @@
             "01:00 PM",
             "02:00 PM",
             "03:00 PM"});
-            this.horaComboBox.Location = new System.Drawing.Point(66, 232);
+            this.horaComboBox.Location = new System.Drawing.Point(107, 231);
             this.horaComboBox.Name = "horaComboBox";
-            this.horaComboBox.Size = new System.Drawing.Size(139, 21);
-            this.horaComboBox.TabIndex = 34;
+            this.horaComboBox.Size = new System.Drawing.Size(142, 21);
+            this.horaComboBox.TabIndex = 41;
+            // 
+            // servicioTextBox
+            // 
+            this.servicioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCitasBindingSource, "Servicio", true));
+            this.servicioTextBox.Location = new System.Drawing.Point(107, 265);
+            this.servicioTextBox.Name = "servicioTextBox";
+            this.servicioTextBox.Size = new System.Drawing.Size(141, 20);
+            this.servicioTextBox.TabIndex = 42;
+            // 
+            // fecha_CitaDateTimePicker
+            // 
+            this.fecha_CitaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaCitasBindingSource, "Fecha_Cita", true));
+            this.fecha_CitaDateTimePicker.Location = new System.Drawing.Point(107, 302);
+            this.fecha_CitaDateTimePicker.Name = "fecha_CitaDateTimePicker";
+            this.fecha_CitaDateTimePicker.Size = new System.Drawing.Size(142, 20);
+            this.fecha_CitaDateTimePicker.TabIndex = 43;
             // 
             // Form6Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(916, 503);
-            this.Controls.Add(this.horaComboBox);
-            this.Controls.Add(this.empleadoComboBox);
-            this.Controls.Add(estatusLabel1);
-            this.Controls.Add(this.estatusComboBox);
-            this.Controls.Add(fecha_CitaLabel);
+            this.ClientSize = new System.Drawing.Size(934, 457);
             this.Controls.Add(this.fecha_CitaDateTimePicker);
-            this.Controls.Add(clienteLabel);
-            this.Controls.Add(this.clienteTextBox);
-            this.Controls.Add(empleadoLabel);
-            this.Controls.Add(horaLabel);
-            this.Controls.Add(idLabel);
-            this.Controls.Add(this.idTextBox);
-            this.Controls.Add(servicioLabel);
             this.Controls.Add(this.servicioTextBox);
-            this.Controls.Add(this.citasBL_CitasDataGridView);
+            this.Controls.Add(this.horaComboBox);
+            this.Controls.Add(this.estatusComboBox);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(label1);
+            this.Controls.Add(clienteLabel);
+            this.Controls.Add(empleadoLabel);
+            this.Controls.Add(estatusLabel);
+            this.Controls.Add(fecha_CitaLabel);
+            this.Controls.Add(horaLabel);
+            this.Controls.Add(servicioLabel);
+            this.Controls.Add(this.listaCitasDataGridView);
             this.Controls.Add(this.listaCitasBindingNavigator);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form6Citas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Citas";
@@ -455,8 +457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaCitasBindingNavigator)).EndInit();
             this.listaCitasBindingNavigator.ResumeLayout(false);
             this.listaCitasBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.citasBL_CitasDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaEmpleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCitasDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,22 +479,20 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton listaCitasBindingNavigatorSaveItem;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
-        private System.Windows.Forms.DataGridView citasBL_CitasDataGridView;
-       // private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView listaCitasDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.TextBox clienteTextBox;
-        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox estatusComboBox;
+        private System.Windows.Forms.ComboBox horaComboBox;
         private System.Windows.Forms.TextBox servicioTextBox;
         private System.Windows.Forms.DateTimePicker fecha_CitaDateTimePicker;
-        private System.Windows.Forms.ComboBox estatusComboBox;
-        private System.Windows.Forms.ComboBox empleadoComboBox;
-        private System.Windows.Forms.BindingSource listaEmpleadosBindingSource;
-        private System.Windows.Forms.ComboBox horaComboBox;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
     }
 }
