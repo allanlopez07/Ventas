@@ -5,13 +5,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static BL.Rentas.CitasBL;
+//using static BL.Rentas.CitasBL;
 
 namespace BL.Rentas
 {
     public class ClientesBL
     {
-        Contexto _contexto;
+         Contexto _contexto;
         public BindingList<Cliente> ListaClientes { get; set; }
 
         public ClientesBL()
@@ -23,12 +23,23 @@ namespace BL.Rentas
         }
         public BindingList<Cliente> ObtenerClientes()
         {
-            _contexto.Cliente.Load();
-            ListaClientes = _contexto.Cliente.Local.ToBindingList();
-
+            ListaClientes = new BindingList<Cliente>(
+                _contexto.Cliente.OrderBy(o => o.Nombre). ToList());
 
             return ListaClientes;
         }
+
+        public BindingList<Cliente> ObtenerClientes(string buscar)
+        {
+            var query = _contexto.Cliente
+             .Where(p => p.Nombre.ToLower()
+             .Contains(buscar.ToLower()) == true)
+             .ToList();
+
+            var resultado = new BindingList<Cliente>(query);
+
+            return resultado;
+       }
 
         public Resultado GuardarCliente(Cliente cliente)
         {
@@ -62,12 +73,12 @@ namespace BL.Rentas
             }
             return false;
         }
-        /*    public static implicit operator ClientesBL(Cliente v)
-            {
-                throw new NotImplementedException();
-            }*/
+        public static implicit operator ClientesBL(Cliente v)
+        {
+            throw new NotImplementedException();
+        }
 
-        public void CancelarCambios()
+            public void CancelarCambios()
         {
             foreach (var item in _contexto.ChangeTracker.Entries())
             {
@@ -107,17 +118,14 @@ namespace BL.Rentas
     }
     public class Cliente
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
         public bool activo { get; set; }
+        public int ClienteId { get; set; }
         
-
     }
-
-
-
 }

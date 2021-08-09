@@ -8,26 +8,26 @@ using System.Threading.Tasks;
 
 namespace BL.Rentas
 {
-    public class EmpleadosBL
+   public class EmpleadosBL
     {
-        // empleadosBL_EmpleadosBindingSource
-        Contexto _contexto;
-        public BindingList<Empleados> ListaEmpleados { get; set; }
+           
+           Contexto _contexto;
+          public BindingList<Empleados> ListaEmpleados { get; set; }
         public EmpleadosBL()
         {
             _contexto = new Contexto();
-            ListaEmpleados = new BindingList<Empleados>();
-        }
+            ListaEmpleados = new BindingList<Empleados>(); 
+        }                                                   
 
         public BindingList<Empleados> ObtenerEmpleados()
         {
             _contexto.Empleados.Load();
-            ListaEmpleados = _contexto.Empleados.Local.ToBindingList();
+           ListaEmpleados = _contexto.Empleados.Local.ToBindingList();
 
             return ListaEmpleados;
         }
 
-        public Resultado GuardarEmpelados(Empleados empleados)
+        public Resultado GuardarEmpelados(Empleados empleados) 
         {
             var resultado = Validar(empleados);
             if (resultado.Exitoso == false)
@@ -41,14 +41,14 @@ namespace BL.Rentas
             return resultado;
         }
 
-        public void Agregarempleados()
+        public void Agregarempleados() 
         {
-            var nuevoEmpleado = new Empleados();
+            var nuevoEmpleado = new Empleados(); 
             ListaEmpleados.Add(nuevoEmpleado);
         }
 
-
-        private Resultado Validar(Empleados empleados)
+    
+        private Resultado Validar(Empleados empleados) 
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;
@@ -61,7 +61,7 @@ namespace BL.Rentas
             }
             return resultado;
         }
-        public class Empleados
+        public class Empleados 
         {
             public int Id { get; set; }
             public string Nombre { get; set; }

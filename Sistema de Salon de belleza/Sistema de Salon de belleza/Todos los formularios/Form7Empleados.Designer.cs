@@ -281,7 +281,7 @@
             // 
             // listaEmpleadosBindingSource
             // 
-            this.listaEmpleadosBindingSource.DataSource = typeof(BL.Rentas.EmpleadosBL.Empleados);
+         //   this.listaEmpleadosBindingSource.DataSource = typeof(BL.Rentas.EmpleadosBL.Empleados);
             // 
             // listaEmpleadosDataGridView
             // 

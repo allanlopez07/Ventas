@@ -28,16 +28,18 @@ namespace BL.Rentas
             var usuarioAdmin1 = new UsuariosDB();
             usuarioAdmin1.Nombre = "gladys";
             usuarioAdmin1.Contrasena = "gladys15";
+            usuarioAdmin1.Foto = null;
+            usuarioAdmin1.TipoUsuario = "Admin";
             contexto.Usuarios.Add(usuarioAdmin1);
 
             var usuarioAdmin2 = new UsuariosDB();
             usuarioAdmin2.Nombre = "henry";
             usuarioAdmin2.Contrasena = "henry15";
+            usuarioAdmin1.Foto = null;
+            usuarioAdmin2.TipoUsuario = "Caja";
             contexto.Usuarios.Add(usuarioAdmin2);
 
             
-
-
             var categoria1 = new Categoria();
             categoria1.Id = 002;
             categoria1.Descripcion = "Producto";
@@ -112,14 +114,11 @@ namespace BL.Rentas
             var producto1 = new Producto();
             producto1.Id = 001;
             producto1.Activo = true;
-         //   producto1.CitasId = 001;
-         //   producto1.ClienteId = 001;
             producto1.Descripcion = "Champoo Keratine";
             producto1.Existencia = 002;
             producto1.Foto = null;
             producto1.Marca = "KeratineSb";
             producto1.Precio = 560;
-          //  producto1.ProveedorId = 001;
             producto1.TipoId = 001;
             producto1.CategoriaId = 001;
             contexto.Productos.Add(producto1);
@@ -127,13 +126,11 @@ namespace BL.Rentas
             var producto2 = new Producto();
             producto2.Id = 002;
             producto2.Activo = false;
-        //    producto2.ClienteId = 001;
             producto2.Descripcion = "Planchado";
             producto2.Existencia = 002;
             producto2.Foto = null;
             producto2.Marca = "Ninguna";
             producto2.Precio = 560;
-         //   producto2.ProveedorId = 001;
             producto2.TipoId = 002;
             producto2.CategoriaId = 001;
             contexto.Productos.Add(producto2);

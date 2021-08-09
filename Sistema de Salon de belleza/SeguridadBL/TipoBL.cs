@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL.Rentas
+namespace BL.Rentas 
 {
-
-    public class TipoBL
+    
+   public class TipoBL
     {
         Contexto _contexto;
         public BindingList<Tipo> ListaTipos { get; set; }
@@ -22,8 +22,8 @@ namespace BL.Rentas
 
         public BindingList<Tipo> ObtenerTipos()
         {
-            _contexto.Categorias.Load();
-            ListaTipos = _contexto.Tipos.Local.ToBindingList();
+         //   _contexto.Tipos.Load();
+          //  ListaTipos = _contexto.Tipos.Local.ToBindingList();
 
             return ListaTipos;
         }

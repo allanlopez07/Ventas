@@ -13,14 +13,14 @@ namespace Sistema_de_Salon_de_belleza.Todos_los_formularios
 {
     public partial class Form8Agenda : Form
     {
-        EmpleadosBL _empleados;
+        //EmpleadosBL _empleados;
         public Form8Agenda()
         {
             InitializeComponent();
-            _empleados = new EmpleadosBL();
+          /*  _empleados = new EmpleadosBL();
             listaEmpleadosBindingSource.DataSource = _empleados.ObtenerEmpleados();
             listaEmpleadosBindingSource1.DataSource = _empleados.ObtenerEmpleados();
-
+            */
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

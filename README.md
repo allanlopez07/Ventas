@@ -1,2 +1,2 @@
 # Ventas
-LP III
+Proyecto de ventas en C# orientado a objetos

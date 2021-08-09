@@ -26,11 +26,11 @@ namespace Sistema_de_Salon_de_belleza.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Existencias;Integrated Securit" +
-            "y=True;Encrypt=False;TrustServerCertificate=True")]
-        public string ExistenciasConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MiBaseDeDatos;Integrated Secur" +
+            "ity=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True")]
+        public string MiBaseDeDatosConnectionString {
             get {
-                return ((string)(this["ExistenciasConnectionString"]));
+                return ((string)(this["MiBaseDeDatosConnectionString"]));
             }
         }
     }

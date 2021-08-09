@@ -36,7 +36,7 @@ namespace Sistema_de_Salon_de_belleza.Todos_los_formularios
             if (resultado.Exitoso == true)
             {
                 listaEmpleadosBindingSource.ResetBindings(false);
-              //  DeshabilitarHabilitarHabilitarBotones(true);
+                DeshabilitarHabilitarHabilitarBotones(true);
                 MessageBox.Show("Empleado Guardado Correctamente");
             }
             else

@@ -22,8 +22,8 @@ namespace BL.Rentas
 
         public BindingList<Categoria> ObtenerCategorias() 
         {
-            _contexto.Categorias.Load();
-            ListaCategorias = _contexto.Categorias.Local.ToBindingList();
+      //      _contexto.Categorias.Load();
+       //     ListaCategorias = _contexto.Categorias.Local.ToBindingList();
 
 
             return ListaCategorias;

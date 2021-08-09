@@ -457,7 +457,7 @@
             // 
             // empleadosBLBindingSource
             // 
-            this.empleadosBLBindingSource.DataSource = typeof(BL.Rentas.EmpleadosBL);
+           this.empleadosBLBindingSource.DataSource = typeof(BL.Rentas.EmpleadosBL);
             // 
             // listaEmpleadosBindingSource1
             // 
